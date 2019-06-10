@@ -103,7 +103,7 @@ window.config = {
 <script src="./index.04eb6053.js"></script>
 <!-- 离开和进入页面时改变title -->
 <script>
-  var OriginTitile = document.title;
+  var OriginTitile = window.config.title;
   var titleTime;
   document.addEventListener('visibilitychange', function() {
       if (document.hidden) {
@@ -115,6 +115,7 @@ window.config = {
           titleTime = setTimeout(function() {
               document.title = OriginTitile;
           }, 500);
+          
       }
   });
 </script>
