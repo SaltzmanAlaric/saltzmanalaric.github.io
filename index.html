@@ -21,10 +21,6 @@ window.config = {
 }
 </script>
 <style>
-  .bgs{
-    background-color: #abcdef;
-    border: 1px solid red;
-  }
   .loading,
   .error,
   .transition {
@@ -91,15 +87,15 @@ window.config = {
 </head>
 <body>
 <div id="bar"></div>
-<div class="page home bgs">
+<div class="page home" style="background-color: #abcdef;">
   <div>
-  <div id="user" class="bgs"></div>
+  <div id="user"></div>
   <div id="posts"></div>
   </div>
 </div>
 <div class="page single">
-  <div class="bgs">
-  <div id="post" ></div>
+  <div>
+  <div id="post"></div>
   <div id="comments"></div>
   </div>
 </div>
