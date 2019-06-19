@@ -43,7 +43,8 @@ window.config = {
     visibility: hidden;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
-    background-color: rgba(255, 255, 255, .95);
+    background-color: #abcdef;
+  /*rgba(255, 255, 255, .95);*/
   }
   .loading #loader {
     opacity: 1;
@@ -87,10 +88,9 @@ window.config = {
 </head>
 <body>
 <div id="bar"></div>
-<div style="background-color: #abcdef;">
 <div class="page home" >
   <div>
-  <div id="user"></div>
+  <div id="user" style="background-image: url(bg.webp)"></div>
   <div id="posts"></div>
   </div>
 </div>
@@ -99,7 +99,6 @@ window.config = {
   <div id="post"></div>
   <div id="comments"></div>
   </div>
-</div>
 </div>
 <div id="loader"><div></div></div>
 <script src="./index.04eb6053.js"></script>
