@@ -104,23 +104,5 @@ window.config = {
 </div>
 <div id="loader"><div></div></div>
 <script src="./index.04eb6053.js"></script>
-<!-- 离开和进入页面时改变title -->
-<script>
-  var OriginTitile = window.config.title;
-  var titleTime;
-  document.addEventListener('visibilitychange', function() {
-      if (document.hidden) {
-          document.title = '(つェ⊂)好像崩溃了啦~';
-          clearTimeout(titleTime);
-      }
-      else {
-          document.title = '(*´∇｀*) 哈哈，骗你的啦~';
-          titleTime = setTimeout(function() {
-              document.title = OriginTitile;
-          }, 500);
-          
-      }
-  });
-</script>
 </body>
 </html>
