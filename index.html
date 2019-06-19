@@ -8,19 +8,22 @@
 <title> loading... </title>
 <script>
 window.config = {
-  organization: false, // 默认是 false，如果你的项目是属于 GitHub 组织 的，请设置为 true
-  order: 'CREATED_AT', // 文章排序，以 创建时间 或者 更新时间，可选值 'UPDATED_AT'，'CREATED_AT'
-  title: '一方通行', // 博客标题
-  user: 'SaltzmanAlaric', // GitHub 用户名，必须
-  repository: 'Mirror-blog', // GitHub 项目名，指定文章内容来源 issues，必须
-  authors: 'SaltzmanAlaric', // 博客作者，以 ',' 分割，GitHub 用户名默认包含在内
-  ignores: '1', // 文章忽略的 issues ID
-  host: '', // 博客的主域名，不填自动获取，请注意这个值会影响 hash 的值
-  hash: 'WTWUfeXEATcEPdACWEdXTEUEFUUOdFWEXdcfcFcE c2FsdHptYW5hbGFyaWMuZ2l0aHViLmlv', // 必须
-  perpage: 5, // 分页
+  organization: false,
+  order: 'CREATED_AT',
+  title: '一方通行',
+  user: 'SaltzmanAlaric',
+  repository: 'Mirror-blog',
+  authors: 'SaltzmanAlaric',
+  ignores: '1',
+  host: '',
+  hash: 'WTWUfeXEATcEPdACWEdXTEUEFUUOdFWEXdcfcFcE c2FsdHptYW5hbGFyaWMuZ2l0aHViLmlv',
+  perpage: 5,
 }
 </script>
 <style>
+  body {
+    background-color: #abcdef;
+  }
   .loading,
   .error,
   .transition {
