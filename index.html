@@ -21,9 +21,13 @@ window.config = {
 }
 </script>
 <style>
-  @media screen and (max-width: 960px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+  @media screen and (max-width: 960px) {
     .page > div {
       max-width: 100%;
+    }
+    /*隐藏时间*/
+    #post > p, .comment-list .comment-body span {
+      display: none;
     }
   }
   .loading,
