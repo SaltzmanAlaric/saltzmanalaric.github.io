@@ -21,6 +21,11 @@ window.config = {
 }
 </script>
 <style>
+  @media screen and (max-width: 960px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+    .page > div {
+      max-width: 100%;
+    }
+  }
   .loading,
   .error,
   .transition {
