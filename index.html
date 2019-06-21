@@ -20,7 +20,18 @@ window.config = {
   perpage: 5,
   motto: '君子生非异也，善假于物也。',
   aboutme: '#/posts/1',
-}
+};
+/*正文里面的a标签空白页打开*/
+function changeTarget(parent,tag){
+  var _href = parent.getElementsByTagName(tag);
+  for(i=0;i<_href.length;i++){
+      _href[i].setAttribute("target","_blank");
+  }
+};
+window.onload = function(){
+  var ele= document.getElementByClassName('markdown-body');
+  changeTarget(ele,"a");
+};
 </script>
 <style>
   @media screen and (max-width: 800px) {
