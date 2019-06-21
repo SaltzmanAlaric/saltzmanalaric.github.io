@@ -28,7 +28,7 @@ function changeTarget(parent,tag){
       _href[i].setAttribute("target","_blank");
   }
 };
-window.onload = function(){
+var load = function(){
   var ele= document.getElementsByClassName('markdown-body');
   changeTarget(ele,"a");
 };
