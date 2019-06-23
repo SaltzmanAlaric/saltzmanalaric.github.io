@@ -20,19 +20,9 @@ window.config = {
   perpage: 5,
   motto: '君子生非异也，善假于物也。',
   aboutme: '#/posts/1',
-  errorTitle:"恭喜达成404成就！",
-  errorContent:"您访问的文章不存在哦，请认真核对网址。",
-};
-/*正文里面的a标签空白页打开*/
-function changeTarget(parent,tag){
-  var _href = parent.getElementsByTagName(tag);
-  for(i=0;i<_href.length;i++){
-      _href[i].setAttribute("target","_blank");
-  }
-};
-var linkblank = function(){
-  var ele= document.getElementsByClassName('markdown-body');
-  changeTarget(ele[0],"a");
+  errorTitle: "恭喜达成404成就！",
+  errorContent: "您访问的文章不存在哦，请认真核对网址。",
+  issues: "https://github.com/SaltzmanAlaric/weekly/issues/",
 };
 </script>
 <style>
@@ -52,11 +42,11 @@ var linkblank = function(){
   .social {
     margin-top: 20px;
   }
-  /*隐藏评论*/
+  /*隐藏评论
   #comments > a,
   #post > a.button{
     display: none;
-  }
+  }*/
   .loading,
   .error,
   .transition {
