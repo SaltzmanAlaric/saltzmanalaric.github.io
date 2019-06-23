@@ -30,7 +30,7 @@ function changeTarget(parent,tag){
       _href[i].setAttribute("target","_blank");
   }
 };
-var load = function(){
+var linkblank = function(){
   var ele= document.getElementsByClassName('markdown-body');
   changeTarget(ele,"a");
 };
