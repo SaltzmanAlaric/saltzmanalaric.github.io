@@ -33,7 +33,7 @@ function getByAjax(url, id) {
     xmlHttpReg = new XMLHttpRequest();
   }
   if (xmlHttpReg != null) {
-    xmlHttpReg.open("get", url, false);
+    xmlHttpReg.open("get", url, true);
     xmlHttpReg.send(null);
     xmlHttpReg.onreadystatechange = function() {
       if (xmlHttpReg.readyState == 4 && xmlHttpReg.status == 200) {
