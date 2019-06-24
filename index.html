@@ -24,6 +24,24 @@ window.config = {
   errorContent: "您访问的文章不存在哦，请认真核对网址。",
   comments: "weekly",
 };
+
+function getByAjax(url, id) {
+  var xmlHttpReg = null;
+  if (window.ActiveXObject) {//如果是IE
+    xmlHttpReg = new ActiveXObject("Microsoft.XMLHTTP");
+  } else if (window.XMLHttpRequest) {
+    xmlHttpReg = new XMLHttpRequest();
+  }
+  if (xmlHttpReg != null) {
+    xmlHttpReg.open("get", url, true);
+    xmlHttpReg.send(null);
+    xmlHttpReg.onreadystatechange = function() {
+      if (xmlHttpReg.readyState == 4 && xmlHttpReg.status == 200) {
+        document.getElementById(id).setAttribute("size", JSON.parse(xmlHttpReg.responseText).comments);
+      }
+    }
+  }
+}
 </script>
 <style>
   @media screen and (max-width: 800px) {
