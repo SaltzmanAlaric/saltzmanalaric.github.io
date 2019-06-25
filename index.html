@@ -28,8 +28,16 @@ window.config = {
   loadMore: '更多',
 };
 
-function getByAjax(url, id) {
-  var xmlHttpReg = null;
+function getFetch(url, id) {
+  fetch(url).then(function(res) {
+    if (res.ok) {
+      res.json().then(function(obj) {
+        document.getElementById(id).innerHTML +="<div>"+obj.comments+"</div>"
+      })
+    }
+  });
+
+ /* var xmlHttpReg = null;
   if (window.ActiveXObject) {//如果是IE
     xmlHttpReg = new ActiveXObject("Microsoft.XMLHTTP");
   } else if (window.XMLHttpRequest) {
@@ -43,7 +51,7 @@ function getByAjax(url, id) {
         document.getElementById(id).innerHTML +="<div>"+JSON.parse(xmlHttpReg.responseText).comments+"</div>"
         //document.getElementById(id).setAttribute("size", );
       }
-    }
+    }*/
   }
 
 }
