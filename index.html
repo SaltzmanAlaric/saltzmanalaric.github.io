@@ -37,7 +37,7 @@ function getFetch(url, id, a, n ,s, c, that) {
         var ele;
         t = obj.comments;
         if(0===t){var
-                i=(0,s.default)("a",{className:"button",target:"_blank",href:"https://github.com/".concat(c,"/").concat(window.config.comments,"/issues/").concat(n,"#new_comment_field"),innerHTML:window.config.commentWrite});debugger; e.append(i),e.append(r),e.dom[0];ele = e.dom[0];}else{var{mirror:d}=that,u=(0,s.default)("div",{className:"open-comments"}),p=(0,s.default)("button",{className:"button",onclick(){d.openComments(n.toString(),that)},innerHTML:window.config.commentTitle.concat("(", t,")")});debugger;u.appendChild(p),u.appendChild(r),e.append(u),e.dom[0];ele = e.dom[0];}
+                i=(0,s.default)("a",{className:"button",target:"_blank",href:"https://github.com/".concat(c,"/").concat(window.config.comments,"/issues/").concat(n,"#new_comment_field"),innerHTML:window.config.commentWrite}); e.append(i),e.append(r),e.dom[0];ele = e.dom[0];}else{var{mirror:d}=that,u=(0,s.default)("div",{className:"open-comments"}),p=(0,s.default)("button",{className:"button",onclick(){d.openComments(n.toString(),that)},innerHTML:window.config.commentTitle.concat("(", t,")")});debugger;u.appendChild(p),u.appendChild(r),e.append(u),e.dom[0];ele = e.dom[0];}
 
 
         document.getElementById("post").appendChild(ele);})}});
