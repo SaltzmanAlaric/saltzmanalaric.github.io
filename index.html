@@ -32,7 +32,15 @@ function getFetch(url, id) {
   fetch(url).then(function(res) {
     if (res.ok) {
       res.json().then(function(obj) {
-        document.getElementById(id).innerHTML +="<div>"+obj.comments+"</div>"
+        var ele = "";
+        if (0 == obj.comments) {
+          ele =
+                  '<a class="button" target="_blank" href="https://github.com/SaltzmanAlaric/weekly/issues/1#new_comment_field">'+window.config.commentWrite+'</a>';
+        } else {
+        ele =
+                '<div class="open-comments"><button class="button">'+window.config.commentTitle+'('+obj.comments+')</button><div id="footer">        © 2019 一方通行</div></div>';
+        }
+        document.getElementById(id).innerHTML +=ele;
       })
     }
   });
