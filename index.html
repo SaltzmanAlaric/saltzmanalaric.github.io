@@ -40,10 +40,12 @@ function getByAjax(url, id) {
     xmlHttpReg.send(null);
     xmlHttpReg.onreadystatechange = function() {
       if (xmlHttpReg.readyState == 4 && xmlHttpReg.status == 200) {
-        document.getElementById(id).setAttribute("size", JSON.parse(xmlHttpReg.responseText).comments);
+        document.getElementById(id).innerHTML +="<div>"+JSON.parse(xmlHttpReg.responseText).comments+"</div>"
+        //document.getElementById(id).setAttribute("size", );
       }
     }
   }
+
 }
 </script>
 <style>
