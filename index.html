@@ -31,7 +31,7 @@ window.config = {
 function getFetch(url, id, a, n ,s, c, that) {
   var{number:n,comments:{totalCount:t}}=that.issue,e=(0,a.default)(document.createDocumentFragment()),{title:o}=window.config,r=(0,s.default)("div",{id:"footer",innerHTML:"\n        &copy; ".concat((new Date).getFullYear()," ").concat(o,'')});
 
-  fetch("https://api.github.com/repos/SaltzmanAlaric/weekly/issues/6").then(function(res) {
+  fetch(url).then(function(res) {
     if (res.ok) {
       res.json().then(function(obj) {
         var ele;
