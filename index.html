@@ -28,7 +28,8 @@ window.config = {
   loadMore: '更多',
 };
 
-var getParams = function(key){var params = window.location.search.split('?')[1];
+var getParams = function(key){
+  var params = window.location.search.split('?')[1];
   if (params) {
     eval("var reg = /(^|&)" + key + "=([^&]*)/;");
     var map = params.match(reg);
