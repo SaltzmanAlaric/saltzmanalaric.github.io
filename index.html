@@ -27,6 +27,17 @@ window.config = {
   commentWrite: '我要发言',
   loadMore: '更多',
 };
+
+var getParams = function(key){var params = window.location.search.split('?')[1];
+  if (params) {
+    eval("var reg = /(^|&)" + key + "=([^&]*)/;");
+    var map = params.match(reg);
+    if (map) {
+      return decodeURI(map[2]);
+    }
+  }
+  return null;
+}
 </script>
 <style>
   @media screen and (max-width: 800px) {
@@ -124,8 +135,5 @@ window.config = {
 </div>
 <div id="loader"><div></div></div>
 <script src="./index.04eb6053.js"></script>
-<script>
-
-</script>
 </body>
 </html>
