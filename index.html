@@ -41,22 +41,23 @@ var getParams = function(key){
 }
 
 var openLabels = function(url){
-  if(window.config.labels){
-    document.getElementById("labels").style.display = window.config.labels == 1 ? "none" : "";
-    window.config.labels = -window.config.labels;
+  var ele = document.getElementById("labels");
+  if(!ele.innerHTML){
+      fetch(url).then(function(res){
+          if(res.ok){res.json().then(function(obj){
+              if(obj){
+                  var labels = "";
+                  for(var i in obj){
+                      labels += "<a href='?label=" + obj[i].name+"'>〓" + obj[i].name + "</a>";
+                  }
+                  ele.innerHTML += labels;
+              }
+          })}
+      });
+      window.config.labels = 1;
   } else {
-    fetch(url).then(function(res){
-        if(res.ok){res.json().then(function(obj){
-            if(obj){
-                var labels = "";
-                for(var i in obj){
-                    labels += "<a href='?label=" + obj[i].name+"'>〓" + obj[i].name + "</a>";
-                }
-                document.getElementById("labels").innerHTML += labels;
-            }
-        })}
-    });
-    window.config.labels = 1;
+      ele.style.display = window.config.labels == 1 ? "none" : "";
+      window.config.labels = -window.config.labels;
   }
 };
 </script>
