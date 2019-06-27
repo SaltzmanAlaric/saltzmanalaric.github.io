@@ -40,12 +40,12 @@ var getParams = function(key){
   return null;
 }
 
-var openLabels = function(){
+var openLabels = function(url){
   if(window.config.labels){
     document.getElementById("labels").style.display = window.config.labels == 1 ? "none" : "";
     window.config.labels = -window.config.labels;
   } else {
-    fetch("https://api.github.com/repos/" + window.config.user + "/" + window.config.repository + "/labels").then(function(res){
+    fetch(url).then(function(res){
         if(res.ok){res.json().then(function(obj){
             if(obj){
                 var labels = "";
