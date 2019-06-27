@@ -40,7 +40,26 @@ var getParams = function(key){
   return null;
 }
 
-var openLabels=function(){if(window.config.labels){document.getElementById("labels").style.display= window.config.labels==1 ? "none" : "";window.config.labels=-window.config.labels;}else{fetch("https://api.github.com/repos/"+window.config.user+"/"+window.config.repository+"/labels").then(function(res){if(res.ok){res.json().then(function(obj){if(obj){var labels = "<div id='labels' class='labels'>";for(var i in obj){labels+="<a href='?label=" +obj[i].name+"'>#"+obj[i].name+"</a>";}labels+="</div>";document.getElementsByClassName("social")[0].innerHTML+=labels;}})}});window.config.labels=1;}};
+var openLabels = function(){
+  if(window.config.labels){
+    document.getElementById("labels").style.display = window.config.labels == 1 ? "none" : "";
+    window.config.labels = -window.config.labels;
+  } else {
+    fetch("https://api.github.com/repos/" + window.config.user + "/" + window.config.repository + "/labels").then(function(res){
+        if(res.ok){res.json().then(function(obj){
+            if(obj){
+                var labels = "<div id='labels'>";
+                for(var i in obj){
+                    labels += "<a href='?label=" + obj[i].name+"'>#" + obj[i].name + "</a>";
+                }
+                labels += "</div>";
+                document.getElementsByClassName("social")[0].innerHTML += labels;
+            }
+        })}
+    });
+    window.config.labels = 1;
+  }
+};
 </script>
 <style>
   @media screen and (max-width: 800px) {
@@ -58,6 +77,16 @@ var openLabels=function(){if(window.config.labels){document.getElementById("labe
   #post > a.button{
     display: none;
   }*/
+  #labels > a {
+      margin-right: 10px;
+      margin: 0 3px;
+      color: #666;
+      border: 1px solid #e1e1e1;
+      background: #e8e8e8;
+      border-radius: 3px;
+      padding: 3px;
+      display: inline-block;
+  }
   .loading,
   .error,
   .transition {
