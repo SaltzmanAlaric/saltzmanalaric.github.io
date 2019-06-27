@@ -42,17 +42,16 @@ var getParams = function(key){
 
 var openLabels = function(url){
   if(window.config.labels){
-    document.getElementById("labels").style.display = window.config.labels == 1 ? "none" : " ";
+    document.getElementById("labels").style.display = window.config.labels == 1 ? "none" : "";
     window.config.labels = -window.config.labels;
   } else {
     fetch(url).then(function(res){
         if(res.ok){res.json().then(function(obj){
             if(obj){
-                var labels = "<div id='labels'>";
+                var labels = "";
                 for(var i in obj){
                     labels += "<a href='?label=" + obj[i].name+"'>#" + obj[i].name + "</a>";
                 }
-                labels += "</div>";
                 document.getElementById("labels").innerHTML += labels;
             }
         })}
