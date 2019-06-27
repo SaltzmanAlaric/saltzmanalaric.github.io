@@ -48,12 +48,11 @@ var openLabels = function(){
     fetch("https://api.github.com/repos/" + window.config.user + "/" + window.config.repository + "/labels").then(function(res){
         if(res.ok){res.json().then(function(obj){
             if(obj){
-                var labels = "<div id='labels'>";
+                var labels = "";
                 for(var i in obj){
                     labels += "<a href='?label=" + obj[i].name+"'>#" + obj[i].name + "</a>";
                 }
-                labels += "</div>";
-                document.getElementsByClassName("social")[0].innerHTML += labels;
+                document.getElementById("labels").innerHTML += labels;
             }
         })}
     });
