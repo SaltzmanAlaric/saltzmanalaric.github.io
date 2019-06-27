@@ -42,7 +42,7 @@ var getParams = function(key){
 
 var openLabels = function(url){
   if(window.config.labels){
-    document.getElementById("labels").style.display = window.config.labels == 1 ? "none" : " ";
+    document.getElementById("labels").style.display = window.config.labels == 1 ? "none" : "block";
     window.config.labels = -window.config.labels;
   } else {
     fetch(url).then(function(res){
