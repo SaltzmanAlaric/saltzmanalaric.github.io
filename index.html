@@ -38,7 +38,7 @@ var getParams = function(key){
     }
   }
   return null;
-}
+};
 
 var openLabels = function(url){
   var ele = document.getElementById("labels");
@@ -48,7 +48,7 @@ var openLabels = function(url){
               if(arr){
                   var labels = "";
                   for(var i in arr){
-                      labels += "<a href='?label=" + arr[i].name+"'>#" + arr[i].name + "</a>";
+                      labels += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
                   }
                   ele.innerHTML = labels;
               }
