@@ -40,7 +40,7 @@ var getParams = function(key){
   return null;
 };
 
-var labels = "";
+var label_text = "";
 var openLabels = function(url){
   var ele = document.getElementById("labels");
   if(!ele.innerHTML){
@@ -48,13 +48,13 @@ var openLabels = function(url){
       fetch(url).then(function(res){
         if(res.ok){res.json().then(function(arr){
           for(var i in arr){
-            labels += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
+            label_text += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
           }
-          ele.innerHTML = labels;
+          ele.innerHTML = label_text;
         })}
       });
     } else {
-      ele.innerHTML = labels;
+      ele.innerHTML = label_text;
     }
     window.config.labels = 1;
   } else {
