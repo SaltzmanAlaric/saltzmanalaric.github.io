@@ -31,7 +31,7 @@ window.config = {
 var getParams = function(key){
   var params = window.location.search.split('?')[1];
   if (params) {
-    eval("var reg = /(^|&)" + key + "=([^&]*)/;");
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)");
     var map = params.match(reg);
     if (map) {
       return decodeURI(map[2]);
@@ -40,24 +40,26 @@ var getParams = function(key){
   return null;
 };
 
+var labels = "";
 var openLabels = function(url){
   var ele = document.getElementById("labels");
   if(!ele.innerHTML){
+    if (labels.length === 0) {
       fetch(url).then(function(res){
-          if(res.ok){res.json().then(function(arr){
-              if(arr){
-                  var labels = "";
-                  for(var i in arr){
-                      labels += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
-                  }
-                  ele.innerHTML = labels;
-              }
-          })}
+        if(res.ok){res.json().then(function(arr){
+          for(var i in arr){
+            labels += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
+          }
+          ele.innerHTML = labels;
+        })}
       });
-      window.config.labels = 1;
+    } else {
+      ele.innerHTML = labels;
+    }
+    window.config.labels = 1;
   } else {
-      ele.style.display = window.config.labels === 1 ? "none" : "";
-      window.config.labels = -window.config.labels;
+    ele.style.display = window.config.labels === 1 ? "none" : "";
+    window.config.labels = -window.config.labels;
   }
 };
 </script>
