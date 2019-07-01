@@ -44,7 +44,7 @@ var label_text = "";
 var openLabels = function(url){
   var ele = document.getElementById("labels");
   if(!ele.innerHTML){
-    if (labels.length === 0) {
+    if (label_text.length === 0) {
       fetch(url).then(function(res){
         if(res.ok){res.json().then(function(arr){
           for(var i in arr){
