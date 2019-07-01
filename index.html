@@ -40,22 +40,19 @@ var getParams = function(key){
   return null;
 };
 
-var label_text = "";
+
 var openLabels = function(url){
   var ele = document.getElementById("labels");
   if(!ele.innerHTML){
-    if (label_text.length === 0) {
-      fetch(url).then(function(res){
-        if(res.ok){res.json().then(function(arr){
-          for(var i in arr){
-            label_text += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
-          }
-          ele.innerHTML = label_text;
-        })}
-      });
-    } else {
-      ele.innerHTML = label_text;
-    }
+    fetch(url).then(function(res){
+      if(res.ok){res.json().then(function(arr){
+        var label_text = "";
+        for(var i in arr){
+          label_text += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
+        }
+        ele.innerHTML = label_text;
+      })}
+    });
     window.config.labels = 1;
   } else {
     ele.style.display = window.config.labels === 1 ? "none" : "";
