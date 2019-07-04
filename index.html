@@ -31,15 +31,13 @@ window.config = {
 var getParams = function(key){
   var params = window.location.search.split('?')[1];
   if (params) {
-    var reg = new RegExp("(^|&)" + key + "=([^&]*)");
-    var map = params.match(reg);
+    var map = params.match("(^|&)" + key + "=([^&]*)");
     if (map) {
       return decodeURI(map[2]);
     }
   }
   return null;
 };
-
 
 var openLabels = function(url){
   var ele = document.getElementById("labels");
@@ -157,7 +155,7 @@ var openLabels = function(url){
 </head>
 <body>
 <div id="bar"></div>
-<div class="page home" >
+<div class="page home">
   <div>
   <div id="user"></div>
   <div id="posts"></div>
