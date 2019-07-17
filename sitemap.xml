@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset>	
+	<url>
+		<loc>https://saltzmanalaric.github.io</loc>
+		<priority>1.00</priority>
+		<lastmod>2019-07-17</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://saltzmanalaric.github.io/#/posts/6</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-06-27</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://saltzmanalaric.github.io/#/posts/8</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-06-28</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://saltzmanalaric.github.io/#/posts/9</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-07-05</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://saltzmanalaric.github.io/#/posts/10</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-07-16</lastmod>
+		<changefreq>yearly</changefreq>
+	</url>
+	<url>
+		<loc>https://saltzmanalaric.github.io/#/posts/11</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-07-12</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+</urlset>
