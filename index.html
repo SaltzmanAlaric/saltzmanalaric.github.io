@@ -104,6 +104,9 @@ L2Dwidget.init({
 </script>
 <style>
   @media screen and (max-width: 800px) {
+  .page {
+      background: #fff;
+    }
     .page > div {
       max-width: 100%;
     }
@@ -202,9 +205,11 @@ L2Dwidget.init({
 #live2dcanvas {
    border: 0 !important;
 }
+@media screen and (min-width: 801px) {
   .page {
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   }
+}
 </style>
 </head>
 <body>
