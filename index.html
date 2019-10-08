@@ -7,6 +7,8 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title> loading... </title>
+<script type="text/javascript" charset="utf-8"  src="L2Dwidget.0.min.js"></script>
+<script type="text/javascript" charset="utf-8"  src="L2Dwidget.min.js"></script>
 <script>
 window.config = {
   organization: false,
@@ -58,6 +60,18 @@ var openLabels = function(url){
     window.config.labels = -window.config.labels;
   }
 };
+L2Dwidget.init(
+	{"display": 
+		{
+    "superSample": 2,
+    "width": 200,
+    "height": 400,
+    "position": "right",
+    "hOffset": 0,
+    "vOffset": 0
+    }
+ }
+);
 </script>
 <style>
   @media screen and (max-width: 800px) {
@@ -155,6 +169,10 @@ var openLabels = function(url){
   }
   @keyframes loading { 100% { transform: rotate(360deg) } }
   @-webkit-keyframes loading { 100% { -webkit-transform: rotate(360deg) } }
+  
+#live2dcanvas {
+   border: 0 !important;
+}
 </style>
 </head>
 <body>
