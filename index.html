@@ -11,7 +11,7 @@
 <script type="text/javascript" charset="utf-8"  src="./L2Dwidget.min.js"></script>
 <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
 -->
-<script type="text/javascript" charset="utf-8" async="" src="https://l2dwidget.js.org/lib/L2Dwidget.0.min.js"></script>
+<script src="https://l2dwidget.js.org/lib/L2Dwidget.0.min.js"></script>
 <script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
@@ -104,7 +104,7 @@ L2Dwidget.init({
 });
 /* 鼠标点击特效 - 7Core.CN */
 var a_idx = 0;jQuery(document).ready(function($) {$("body").click(function(e) {var a = new Array("♪", "♩","♫","♬","♭","€","§","¶", "♯", "$", "Ψ" ,"¥","∮","‖","⌒","∠");var $i = $("<span/>").text(a[a_idx]);
-a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-index": 100000000,"top": y - 20,"left": x,"position": "absolute","font-weight": "bold","color": "#ff6651"});$("body").append($i);$i.animate({"top": y - 180,"opacity": 0},1500,function() {$i.remove();});});});
+a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-index": 100000000,"top": y - 20,"left": x,"position": "absolute","font-size":"1em","font-weight": "bold","color": "#ff6651"});$("body").append($i);$i.animate({"top": y - 180,"opacity": 0},1500,function() {$i.remove();});});});
 </script>
 <style>
   @media screen and (max-width: 800px) {
