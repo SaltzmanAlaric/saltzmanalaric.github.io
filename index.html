@@ -108,15 +108,14 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
 </script>
 <style>
   @media screen and (max-width: 800px) {
-  div#background
+  div.foreground,
   .page {
       background: #fff;
     }
     .page > div {
       max-width: 100%;
     }
-    div.foreground,
-    div#midground,
+    
     .sitev,
     /*隐藏时间*/
     #post > p,
@@ -250,7 +249,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<audio muted="true" loop autoplay>
+<audio loop autoplay>
     <source src="static/Approaching Nirvana - You.mp3">
 </audio>
 <div id="background" class="wall"></div>
