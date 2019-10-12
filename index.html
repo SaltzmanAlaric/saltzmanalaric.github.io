@@ -284,10 +284,10 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     tag = !tag;
   });
   
-  setTimeout(function(){
+  window.onload=function(){
     $('#user p').bumpyText();
     $('#user> h1').bumpyText();
-  }, 5000);
+  }
   </script>
 </body>
 </html>
