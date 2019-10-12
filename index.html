@@ -211,6 +211,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
    border: 0 !important;
 }
 @media screen and (min-width: 801px) {
+  div#background
   .page {
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   }
@@ -246,7 +247,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<audio loop autoplay>
+<audio muted="true" loop autoplay>
     <source src="static/Approaching Nirvana - You.mp3">
 </audio>
 <div id="background" class="wall"></div>
