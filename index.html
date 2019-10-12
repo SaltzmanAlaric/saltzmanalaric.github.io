@@ -115,7 +115,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     .page > div {
       max-width: 100%;
     }
-    .yinyue,
+
     .sitev,
     /*隐藏时间*/
     #post > p,
@@ -213,7 +213,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
    border: 0 !important;
 }
 @media screen and (min-width: 801px) {
-  div#background
+  div#background,
   .page {
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   }
@@ -249,8 +249,8 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<div class="yinyue">
-  <audio loop autoplay>
+<div id="yinyue">
+  <audio id="audio" loop autoplay>
     <source src="static/Approaching Nirvana - You.mp3">
 </audio>
 </div>
@@ -259,5 +259,11 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
 <div id="top" class="wall"></div>-->
 <script src="./index.04eb6053.js"></script>
 <div class="sitev">💎 <span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
+<script>
+  var audio = document.getElementById("audio");
+  if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) && audio) {
+    document.getElementById("yinyue").removeChild(audio);  
+  }
+</script>
 </body>
 </html>
