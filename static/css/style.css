@@ -25,7 +25,8 @@ audio:hover{
     right: 0;
 }
 div#background{
-    background: url("../images/preview.jpg")no-repeat;
+    /*background: url("../images/preview.jpg")no-repeat;*/
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     -webkit-animation: dd 100s linear infinite;
     -moz-animation: dd 100s linear infinite;
     -o-animation: dd 100s linear infinite;
