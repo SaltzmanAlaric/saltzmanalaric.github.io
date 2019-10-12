@@ -40,9 +40,9 @@ div#midground{
     -o-animation: cc 100s linear infinite;
     animation: cc 100s linear infinite;
 }
-div#foreground{
+div.foreground{
     background: url("../images/foreground.png");
-    z-index: 2;
+    /*z-index: 2;*/
     -webkit-animation: cc 153s linear infinite;
     -o-animation: cc 153s linear infinite;
     -moz-animation: cc 153s linear infinite;
