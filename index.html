@@ -236,6 +236,11 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     z-index: 99999;
     opacity: 1;
     pointer-events: none;
+    cursor: default;
+  }
+  #musicBtn {
+    display: inline;
+    pointer-events: auto;
   }
 }
 </style>
@@ -255,20 +260,30 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<div id="yinyue">
-  <audio id="audio" loop autoplay>
-    <source src="static/You.mp3">
+<audio id="audio" controls="controls" autoplay="autoplay" loop="true" hidden="true">
+  <source src="static/You.mp3">
 </audio>
-</div>
 <div id="background" class="wall"></div>
 <!--<div id="midground" class="wall"></div>
 <div id="top" class="wall"></div>-->
 <script src="./index.04eb6053.js"></script>
-<div class="sitev">💎 <span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
+  <div class="sitev"><div id="musicBtn">💎</div><span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
 <script>
   if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) && $("#audio")[0]) {
-    $("#yinyue").remove();  
+    $("#audio").remove();
   }
+  var tag = false;
+  $('#musicBtn').click(function(){
+    if(tag){
+      $('#audio')[0].pause();
+      this.innerText = "🔇";
+    } else {
+      $('#audio')[0].play();
+      this.innerText = "💎";
+    }
+    tag = !tag;
+  });
+  
   setTimeout(function(){
     $('#user p').bumpyText();
     $('#user> h1').bumpyText();
