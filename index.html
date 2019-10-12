@@ -281,11 +281,26 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     }
     tag = !tag;
   });
-  
-  window.onload=function(){
-    $('#user p').bumpyText();
-    $('#user> h1').bumpyText();
-  }
+ $('#user h1').hover(function(){
+   if (!$('#user h1.bumpy-char')[0]) {
+     $('#user h1').bumpyText();
+   }
+ });
+$('#user h1').click(function(){
+   if (!$('#user h1.bumpy-char')[0]) {
+     $('#user h1').bumpyText();
+   }
+ });
+ $('#user > p').hover(function(){
+   if (!$('#user h1.bumpy-char')[0]) {
+     $('#user > p').bumpyText();
+   }
+ });
+$('#user > p').click(function(){
+   if (!$('#user h1.bumpy-char')[0]) {
+     $('#user > p').bumpyText();
+   }
+ });
   </script>
 </body>
 </html>
