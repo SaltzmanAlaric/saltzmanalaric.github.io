@@ -267,7 +267,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
 <script src="./index.04eb6053.js"></script>
   <div class="sitev"><div id="musicBtn">💎</div><span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
 <script>
-  if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+  if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
   	var bgs = ["linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to right, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to bottom, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to left, #fff1eb 0%, #ace0f9 100%)"];
     window.onload=function(){
       $(".page").css({"backgroundImage": bgs[parseInt(Math.random()*bgs.length)]});
