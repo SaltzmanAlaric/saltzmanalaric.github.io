@@ -220,6 +220,9 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
 @media screen and (min-width: 801px) {
   .page {
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";  
+    -moz-background-size:100% 100%;  
+    background-size:100% 100%;  
   }
   .page > div {
     background-color: hsla(0,0%,100%,.9);
@@ -276,19 +279,21 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
   	var bgs = [
       //"linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to right, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to bottom, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to left, #fff1eb 0%, #ace0f9 100%)"
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wufvml17j31hc0u0jwu.jpg') no-repeat" 
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wufvml17j31hc0u0jwu.jpg')" 
       ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wugvsk3cj31hc0u0djq.jpg') no-repeat" 
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wugvsk3cj31hc0u0djq.jpg')" 
       ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wuhqvp2sj31c00u0x2h.jpg') no-repeat" 
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wuhqvp2sj31c00u0x2h.jpg')" 
       ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wuimyv8qj31c00u0ays.jpg') no-repeat" 
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wuimyv8qj31c00u0ays.jpg')" 
       ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wum4oekmj318g0p0e81.jpg') no-repeat"
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wum4oekmj318g0p0e81.jpg')"
       ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wutkp32jj30xc0kutcu.jpg') no-repeat" 
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wutkp32jj30xc0kutcu.jpg')" 
       ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wtxcej62j31hc0u0n0r.jpg') no-repeat"
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wuy74ocij311y0lcqf7.jpg')"
+      ,
+      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wtxcej62j31hc0u0n0r.jpg')"
       ];
     window.onload=function(){
       $(".page").css({"background": bgs[parseInt(Math.random()*bgs.length)]});
