@@ -264,13 +264,13 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<audio id="audio" controls="controls" hidden="true">
+<audio id="audio" controls="controls" autoplay="autoplay" hidden="true">
 </audio>
 <!--<div id="background" class="wall"></div>
 <div id="midground" class="wall"></div>
 <div id="top" class="wall"></div>-->
 <script src="./index.04eb6053.js"></script>
-  <div class="sitev"><div id="musicBtn">💎</div><span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
+  <div class="sitev"><div id="musicBtn"> ♬ </div><span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
 <script>
   if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
   	var bgs = [
@@ -283,6 +283,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     window.onload=function(){
       $(".page").css({"background": bgs[parseInt(Math.random()*bgs.length)],"backgroundSize":"100% 100%"});
       $('#audio')[0].src = "static/"+parseInt(Math.random()*10)+".mp3";
+  	  //$('#audio')[0].play();
     };
   } else {
     $("#audio").remove();
