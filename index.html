@@ -264,7 +264,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<audio id="audio" controls="controls" autoplay="autoplay" loop="true" hidden="true">
+<audio id="audio" controls="controls" loop="true" hidden="true">
   <source src="static/You.mp3">
 </audio>
 <!--<div id="background" class="wall"></div>
@@ -289,7 +289,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) && $("#audio")[0]) {
     $("#audio").remove();
   }
-  var tag = true;
+  var tag = false;
   $('#musicBtn').click(function(){
     if(tag){
       $('#audio')[0].pause();
