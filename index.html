@@ -264,8 +264,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<audio id="audio" controls="controls" loop="true" hidden="true">
-  <source src="static/You.mp3">
+<audio id="audio" controls="controls" hidden="true">
 </audio>
 <!--<div id="background" class="wall"></div>
 <div id="midground" class="wall"></div>
@@ -283,22 +282,23 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
       ];
     window.onload=function(){
       $(".page").css({"background": bgs[parseInt(Math.random()*bgs.length)],"backgroundSize":"100% 100%"});
+      $('#audio')[0].src = "static/"+parseInt(Math.random()*10)+".mp3";
     };
-  }
-  
-  if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) && $("#audio")[0]) {
+  } else {
     $("#audio").remove();
   }
-  var tag = false;
+  //var tag = false;
   $('#musicBtn').click(function(){
-    if(tag){
+    $('#audio')[0].src = "static/"+parseInt(Math.random()*10)+".mp3";
+  	$('#audio')[0].play();
+    /*if(tag){
       $('#audio')[0].pause();
       this.innerText = "🔇";
     } else {
       $('#audio')[0].play();
       this.innerText = "💎";
     }
-    tag = !tag;
+    tag = !tag;*/
   });
   </script>
 </body>
