@@ -217,6 +217,17 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
 .bumpy-char {
   position: relative;
 }
+  #tts_btn {
+    text-align: center;
+    position: absolute;
+    margin-right: 22px;
+    right: 0px;
+    top: 30px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
 @media screen and (min-width: 801px) {
   .page {
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
@@ -259,7 +270,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
 </div>
 <div class="page single">
   <div>
-  <div id="post"></div>
+  <div id="post"><div class="tts_btn">▶▶</div><div id="bdtts_div_id"><audio id="tts_autio_id"></audio></div></div>
   <div id="comments"></div>
   </div>
 </div>
@@ -306,6 +317,43 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
      $('#audio')[0].loop=true;
      this.innerText = "💎";
    });*/
+  var ttsIndex = 0;
+  	var ttsFlag = true;
+  	var initTts = true;
+  	function doTTS() {
+      var ttsDiv = document.getElementById('bdtts_div_id');
+      var ttsText = document.getElementById('post').innerText;
+      var ttsTexts = ttsText.split('。');
+			if (initTts) {
+	      // 文字转语音
+	      while (ttsDiv.firstChild) {
+	    		ttsDiv.removeChild(ttsDiv.firstChild);
+	    	}
+	      ttsDiv.innerHTML = "";
+	      for (var i=0;i<ttsTexts.length;i++) {
+	      	var sss = '<audio class="tts"><source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&per=3&spd=5&text=' + ttsTexts[i] + '" type="audio/mpeg"><embed id="tts_embed_id" height="0" width="0" src=""></audio>';
+	        ttsDiv.innerHTML += sss;
+	     }
+	     initTts = false;
+     }
+     
+     var audios = document.getElementsByClassName("tts");
+     for(var i=ttsIndex;i<audios.length;i++){
+	     	if (ttsFlag) {
+	     		audios[ttsIndex].play();
+	     	} else {
+	     		audios[ttsIndex].pause();
+	     	}
+	     	if (i < audios.length -1) {
+	     		audios[i].onended = function() {ttsIndex++;this.nextSibling.play();} 
+	     		audios[i].onpause= function() {this.nextSibling.pause();}
+				} else {
+				 	audios[i].onended = function() {ttsIndex=0;ttsFlag=!ttsFlag;} 
+				}
+			}
+			ttsFlag=!ttsFlag;
+			document.getElementById('tts_btn').value=ttsFlag? "▌▌":"▶▶";
+	}
   </script>
 </body>
 </html>
