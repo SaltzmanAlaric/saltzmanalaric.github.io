@@ -247,16 +247,6 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     display: inline;
     pointer-events: auto;
   }
-  #tts_ctrl {
-    text-align: center;
-    position: absolute;
-    margin-right: 22px;
-    right: 0px;
-    top: 30px;
-    width: 40px;
-    height: 30px;
-    cursor: pointer;
-  }
 }
 </style>
 </head>
@@ -294,7 +284,6 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     window.onload=function(){
       $(".page").css({"background": bgs[parseInt(Math.random()*bgs.length)],"backgroundSize":"100% 100%"});
       $('#audio')[0].src = "static/"+parseInt(Math.random()*10)+".mp3";
-  	  //$('#audio')[0].play();
     };
   } else {
     $("#audio").remove();
@@ -302,7 +291,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   var tag = false;
   $('#musicBtn').click(function(){
     $('#audio')[0].src = "static/zzz.mp3";
-  	$('#audio')[0].loop=true;
+    $('#audio')[0].loop=true;
     if(tag){
       $('#audio')[0].pause();
       this.innerText = "🔇";
@@ -317,43 +306,6 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
      $('#audio')[0].loop=true;
      this.innerText = "💎";
    });*/
-  var ttsIndex = 0;
-  	var ttsFlag = true;
-  	var initTts = true;
-  	function doTTS() {
-      var ttsDiv = document.getElementById('bdtts_div_id');
-      var ttsText = document.getElementById('post').innerText;
-      var ttsTexts = ttsText.split('。');
-			if (initTts) {
-	      // 文字转语音
-	      while (ttsDiv.firstChild) {
-	    		ttsDiv.removeChild(ttsDiv.firstChild);
-	    	}
-	      ttsDiv.innerHTML = "";
-	      for (var i=0;i<ttsTexts.length;i++) {
-	      	var sss = '<audio class="tts"><source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&per=3&spd=5&text=' + ttsTexts[i] + '" type="audio/mpeg"><embed id="tts_embed_id" height="0" width="0" src=""></audio>';
-	        ttsDiv.innerHTML += sss;
-	     }
-	     initTts = false;
-     }
-     
-     var audios = document.getElementsByClassName("tts");
-     for(var i=ttsIndex;i<audios.length;i++){
-	     	if (ttsFlag) {
-	     		audios[ttsIndex].play();
-	     	} else {
-	     		audios[ttsIndex].pause();
-	     	}
-	     	if (i < audios.length -1) {
-	     		audios[i].onended = function() {ttsIndex++;this.nextSibling.play();} 
-	     		audios[i].onpause= function() {this.nextSibling.pause();}
-				} else {
-				 	audios[i].onended = function() {ttsIndex=0;ttsFlag=!ttsFlag;} 
-				}
-			}
-			ttsFlag=!ttsFlag;
-			document.getElementById('tts_btn').value=ttsFlag? "▌▌":"▶▶";
-	}
   </script>
 </body>
 </html>
