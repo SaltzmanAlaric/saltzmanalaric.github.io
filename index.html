@@ -284,19 +284,20 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   } else {
     $("#audio").remove();
   }
-
+var ctl = false;
   $('#musicBtn').click(function(){
-    if($('#audio')[0].src != "static/zzz.mp3") {
+    if(!$('#audio')[0].src.endsWith("static/zzz.mp3")) {
       $('#audio')[0].src = "static/zzz.mp3";
     }
     $('#audio')[0].loop=true;
-    if(this.innerText == "💎"){
+    if(ctl){
       $('#audio')[0].pause();
       this.innerText = "🔇";
     } else {
       $('#audio')[0].play();
       this.innerText = "💎";
     }
+    ctl = !ctl;
   });
   </script>
 </body>
