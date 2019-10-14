@@ -262,9 +262,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   </div>
 </div>
 <div id="loader"><div></div></div>
-<audio id="audio" controls="controls" loop="loop" hidden="true">
-  <source src="static/zzz.mp3"/>
-</audio>
+<audio id="audio" controls="controls" autoplay="autoplay" hidden="true"></audio>
 <!--<div id="background" class="wall"></div>
 <div id="midground" class="wall"></div>
 <div id="top" class="wall"></div>-->
@@ -286,31 +284,20 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   } else {
     $("#audio").remove();
   }
-  var tag = false;
+
   $('#musicBtn').click(function(){
-    if($('#audio')[0].src != "static/You.mp3" && $('#audio')[0].src != "static/zzz.mp3") {
+    if($('#audio')[0].src != "static/zzz.mp3") {
       $('#audio')[0].src = "static/zzz.mp3";
     }
-    //$('#audio')[0].loop=true;
-    if(tag){
+    $('#audio')[0].loop=true;
+    if(this.innerText = "💎"){
       $('#audio')[0].pause();
       this.innerText = "🔇";
     } else {
       $('#audio')[0].play();
       this.innerText = "💎";
     }
-    tag = !tag;
   });
-   $('#musicBtn').dblclick(function(){
-     if($('#audio')[0].src == "static/You.mp3") {
-       $('#audio')[0].src = "static/zzz.mp3";
-    } else if($('#audio')[0].src == "static/zzz.mp3") {
-       $('#audio')[0].src = "static/You.mp3";
-    } 
-     $('#audio')[0].play();
-     //$('#audio')[0].loop=true;
-     this.innerText = "💎";
-   });
   </script>
 </body>
 </html>
