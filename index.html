@@ -240,7 +240,6 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     height: 30px;
     z-index: 99999;
     opacity: 1;
-    pointer-events: none;
     cursor: default;
   }
   #musicBtn {
@@ -291,6 +290,7 @@ var ctl = false;
   $('#musicBtn').click(function(){
     if(!$('#audio')[0].src.endsWith("static/zzz.mp3")) {
       $('#audio')[0].src = "static/zzz.mp3";
+      $('.sitev span').bumpyText();
     }
     $('#audio')[0].loop=true;
     if(ctl){
