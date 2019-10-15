@@ -1,11 +1,11 @@
-@media screen and (max-width: 800px) {
-    .page {
+.page {
       background: #fff;
     }
+
+@media screen and (max-width: 800px) {
     .page > div {
       max-width: 100%;
     }
-
     .sitev,
     /*隐藏时间*/
     #post > p,
@@ -99,17 +99,14 @@
   @keyframes loading { 100% { transform: rotate(360deg) } }
   @-webkit-keyframes loading { 100% { -webkit-transform: rotate(360deg) } }
   
-#live2dcanvas {
-   border: 0 !important;
-}
-.bumpy-char {
-  position: relative;
-}
+  #live2dcanvas {
+    border: 0 !important;
+  }
+  .bumpy-char {
+    position: relative;
+  }
   
 @media screen and (min-width: 801px) {
-  .page {
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  }
   .page > div {
     background-color: hsla(0,0%,100%,.9);
     border-color: #ddd;
