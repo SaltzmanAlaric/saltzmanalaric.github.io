@@ -8,9 +8,7 @@
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 <link rel="shortcut icon" href="favicon.ico" />
 <title> loading... </title>
-<!--<link rel="stylesheet" href="static/css/style.css">
-<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
--->
+<link rel="stylesheet" href="./index.css">
 <script src="L2Dwidget.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="jquery.bumpytext.packed.js"></script>
@@ -105,149 +103,8 @@ L2Dwidget.init({
     }
   }
 });
-/* 鼠标点击特效 - 7Core.CN */
-var a_idx = 0;jQuery(document).ready(function($) {$("body").click(function(e) {var a = new Array("♪", "♩","♫","♬","♭","€","§","¶", "♯", "$", "Ψ" ,"¥","∮","‖","⌒","∠");var $i = $("<span/>").text(a[a_idx]);
-a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-index": 100000000,"top": y - 20,"left": x,"position": "absolute","font-size":"1em","font-weight": "bold","color": "#ff6651"});$("body").append($i);$i.animate({"top": y - 180,"opacity": 0},1500,function() {$i.remove();});});});
 </script>
-<style>
-  @media screen and (max-width: 800px) {
-    .page {
-      background: #fff;
-    }
-    .page > div {
-      max-width: 100%;
-    }
 
-    .sitev,
-    /*隐藏时间*/
-    #post > p,
-    .comment-list .comment-body span {
-      display: none;
-    }
-  }
-  /*隐藏评论
-  #comments > a,
-  #post > a.button{
-    display: none;
-  }*/
-  #labels {
-      margin: 0 auto;
-  }
-  #labels > a {
-      margin: 3px 5px;
-      color: #666;
-      border: 1px solid #e1e1e1;
-      background: #f8f8f8;
-      border-radius: 3px;
-      padding: 3px;
-      display: inline-block;
-  }
-  #labels > a:hover {
-      background: #e8e8e8;
-  }
-  #post {
-    text-align: justify;
-  }
-  .loading,
-  .error,
-  .transition {
-    height: 100%;
-  }
-  .loading body,
-  .error body,
-  .transition body {
-    height: 100%;
-  }
-  #loader {
-    text-align: center;
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
-    background-color: rgba(255, 255, 255, .95);
-  }
-  .loading #loader {
-    opacity: 1;
-    visibility: visible;
-  }
-  .loading #loader div {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    vertical-align: middle;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
-    box-shadow: 0 0 3px rgba(0, 0, 0, .15);
-  }
-  .loading #loader div:before {
-    content: '';
-    width: 26px;
-    height: 26px;
-    display: block;
-    margin: 8px auto 0;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
-    -webkit-animation: loading .5s linear forwards infinite;
-    animation: loading .5s linear forwards infinite;
-    border-top: 4px solid #0089fa;
-    border-right: 4px solid #ff002b;
-    border-bottom: 4px solid #ffa900;
-    border-left: 4px solid #00a753;
-  }
-  .loading #loader:after {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
-  @keyframes loading { 100% { transform: rotate(360deg) } }
-  @-webkit-keyframes loading { 100% { -webkit-transform: rotate(360deg) } }
-  
-#live2dcanvas {
-   border: 0 !important;
-}
-.bumpy-char {
-  position: relative;
-}
-  
-@media screen and (min-width: 801px) {
-  .page {
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  }
-  .page > div {
-    background-color: hsla(0,0%,100%,.9);
-    border-color: #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  }
-  .sitev {
-    line-height: 1.4;
-    text-align: center;
-    font-size: 14px;
-    color: #917159;
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    width: 200px;
-    height: 30px;
-    z-index: 99999;
-    opacity: 1;
-    cursor: default;
-  }
-  #musicBtn {
-    display: inline;
-    pointer-events: auto;
-  }
-}
-</style>
 </head>
 <body>
 <div id="bar"></div>
@@ -265,59 +122,8 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
 </div>
 <div id="loader"><div></div></div>
 <audio id="audio" controls="controls" autoplay="autoplay" hidden="true"></audio>
-<!--<div id="background" class="wall"></div>
-<div id="midground" class="wall"></div>
-<div id="top" class="wall"></div>-->
 <script src="./index.04eb6053.js"></script>
-  <div class="sitev"><div id="musicBtn">💎</div><span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
-<script>
-  if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-  	var bgs = [
-      //"linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to right, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to bottom, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to left, #fff1eb 0%, #ace0f9 100%)"
-     "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva2idhkj31hc0u078j.jpg')"
-      ,
-      "url('https://hpaid.cn/templates/pic/11.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva2nrqfj31hc0u0wj4.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva2tceaj31hc0u0q5n.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva34obuj31hc0u0adm.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva44w8hj30qo0f0h1r.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva4so0pj31hc0u00vr.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva537gvj31hc0u0dk7.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva5avxuj311c0l03zz.jpg')"
-      ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wtxcej62j31hc0u0n0r.jpg')"
-      ];
-    window.onload=function(){
-      var idx = parseInt(Math.random()*10);
-      $(".page").css({"background": bgs[idx], "backgroundSize": "100% 100%"});
-      $('#audio')[0].src = "static/"+ idx +".mp3";
-    };
-  } else {
-    $("#audio").remove();
-  }
-var ctl = false;
-  $('#musicBtn').click(function(){
-    if(!$('#audio')[0].src.endsWith("static/zzz.mp3")) {
-      $('#audio')[0].src = "static/zzz.mp3";
-      $('.sitev span').bumpyText();
-    }
-    $('#audio')[0].loop=true;
-    if(ctl){
-      $('#audio')[0].pause();
-      this.innerText = "🔇";
-    } else {
-      $('#audio')[0].play();
-      this.innerText = "💎";
-    }
-    ctl = !ctl;
-  });
-  </script>
+<div class="sitev"><div id="musicBtn">💎</div><span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
+<script src="./index.js"></script>
 </body>
 </html>
