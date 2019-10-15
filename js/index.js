@@ -25,11 +25,9 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
       ,
       "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wtxcej62j31hc0u0n0r.jpg')"
       ];
-    window.onload=function(){
       var idx = parseInt(Math.random()*10);
       $(".page").css({"background": bgs[idx], "backgroundSize": "100% 100%"});
       $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.0/static/"+ idx +".mp3";
-    };
   } else {
     $("#audio").remove();
   }
