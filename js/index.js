@@ -5,29 +5,21 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
   	var bgs = [
       //"linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to right, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to bottom, #fff1eb 0%, #ace0f9 100%)", "linear-gradient(to left, #fff1eb 0%, #ace0f9 100%)"
-     "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva2idhkj31hc0u078j.jpg')"
-      ,
-      "url('https://hpaid.cn/templates/pic/11.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva2nrqfj31hc0u0wj4.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva2tceaj31hc0u0q5n.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva34obuj31hc0u0adm.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva44w8hj30qo0f0h1r.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva4so0pj31hc0u00vr.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva537gvj31hc0u0dk7.jpg')"
-      ,
-      "url('https://tva1.sinaimg.cn/large/007X8olVly1g7yva5avxuj311c0l03zz.jpg')"
-      ,
-      "url('http://tva1.sinaimg.cn/large/007X8olVly1g7wtxcej62j31hc0u0n0r.jpg')"
+        "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016222707.jpg')"
+        ,
+        "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016222354.jpg')"
+        ,
+        "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016221539.jpg')"
+        ,
+        "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016221651.jpg')"
+        ,
+        "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016221836.jpg')"
+        ,
+        "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016221307.jpg')"
       ];
-      var idx = parseInt(Math.random()*10);
-      $(".page").css({"background": bgs[idx], "backgroundSize": "100% 100%"});
-      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.0/static/"+ idx +".mp3";
+      var random = Math.random();
+      $(".page").css({"background": bgs[parseInt(random*bgs.length)], "backgroundSize": "100% 100%"});
+      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.0/static/"+ parseInt(random*10) +".mp3";
   } else {
     $("#audio").remove();
   }
