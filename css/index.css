@@ -109,9 +109,6 @@
 @media screen and (min-width: 801px) {
   .page > div {
     background-color: hsla(0,0%,100%,1.0);
-    border-color: #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
   }
   .sitev {
     line-height: 1.4;
