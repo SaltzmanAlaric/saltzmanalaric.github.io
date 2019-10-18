@@ -164,7 +164,7 @@
             initDB(myDB.name, myDB.version);
             setTimeout(function () {
                 selectByKey(myDB.db, myDB.table, -1);
-            }, 30);
+            }, 300);
 
             $("#code").on("keydown", function (b) {
                 if (b.ctrlKey && 83 == b.which) {
