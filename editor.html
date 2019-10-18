@@ -1,21 +1,190 @@
-<style type="text/css">
-    #e {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        font-size: 16px;
-    }
-</style>
-<div id="e"></div>
-<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script>
-    var myKey = "SecretKeyz";
-    $(document).ready(function () {
-        var e = ace.edit("e");
-        e.setTheme("ace/theme/solarized_light");
-        e.getSession().setMode("ace/mode/markdown");
-    });
-</script>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>Ace在线编辑器</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
+</head>
+<body>
+    <!--代码输入框（注意请务必设置高度，否则无法显示）-->
+    <pre id="code" class="ace_editor" style="margin: 0 auto;min-height:100%;"><textarea class="ace_text-input"></textarea></pre>
+
+    <script>
+        //计算size大小
+        function conver(limit) {
+            if (!limit) {
+                return null;
+            }
+            var size = "";
+            if (limit < 0.1 * 1024) { //如果小于0.1KB转化成B
+                size = limit.toFixed(2) + "B";
+            } else if (limit < 0.1 * 1024 * 1024) {//如果小于0.1MB转化成KB
+                size = (limit / 1024).toFixed(2) + "KB";
+            } else if (limit < 0.1 * 1024 * 1024 * 1024) { //如果小于0.1GB转化成MB
+                size = (limit / (1024 * 1024)).toFixed(2) + "MB";
+            } else { //其他转化成GB
+                size = (limit / (1024 * 1024 * 1024)).toFixed(2) + "GB";
+            }
+
+            var sizestr = size + "";
+            var len = sizestr.indexOf("\.");
+            var dec = sizestr.substr(len + 1, 2);
+            if (dec == "00") {//当小数点后为00时 去掉小数部分
+                return sizestr.substring(0, len) + sizestr.substr(len + 3, 2);
+            }
+            return sizestr;
+        }
+
+        //初始化数据库
+        function initDB(name, version) {
+            var version = version || 1;
+            var request = window.indexedDB.open(name, version);
+            request.onerror = function (e) {
+            }
+            request.onsuccess = function (e) {
+                myDB.db = e.target.result;
+            }
+            //数据表 操作
+            request.onupgradeneeded = function (e) {
+                var db = e.target.result;
+                //如果没有表
+                if (!db.objectStoreNames.contains(myDB.table)) {
+                    //创建表，并设置key
+                    var story = db.createObjectStore(myDB.table, {keyPath: myDB.colums[0], autoIncrement: true});
+                    //创建字段
+                    story.createIndex(myDB.colums[1] + "Index", myDB.colums[1], {unique: true});
+                    for (var i = 2; i < myDB.colums.length; i++) {
+                        story.createIndex(myDB.colums[i] + "Index", myDB.colums[i], {unique: false});
+                    }
+                    setTimeout(function () {
+                        insert(myDB.db, myDB.table, [myDB.defaultData]);
+                    }, 10);
+                }
+            }
+        }
+
+        //添加数据
+        function insert(db, storeName, datas) {
+            var transaction = db.transaction(storeName, "readwrite");//读取权限
+            var store = transaction.objectStore(storeName);
+            for (var i = 0; i < datas.length; i++) {
+                if (datas[i].data) {
+                    datas[i].length = datas[i].data.length;
+                    datas[i].size = conver(datas[i].data.length);
+                }
+                store.put(datas[i]);
+            }
+        }
+
+        //通过主键来获取数据
+        function selectByKey(db, storeName, key) {
+            //通过链接来获取数据表（数据仓库）
+            var transaction = db.transaction(storeName);
+            //实例化数据表
+            var store = transaction.objectStore(storeName);
+            store.get(key).onsuccess = function (e) {
+                var data = e.target.result;
+                if (data && data.data) {
+                    ace.edit("code").setValue(data.data)
+                }
+            }
+        }
+
+        //清空数据
+        function clear(db, storeName) {
+            var request = db.transaction(storeName, 'readwrite').objectStore(storeName).clear();
+            request.onsuccess = function (e) {
+                console.log("清空成功");
+            }
+        }
+
+        //获取url参数
+        var getParams = function (key) {
+            var params = window.location.search.split('?')[1];
+            if (params) {
+                var map = params.match("(^|&)" + key + "=([^&]*)");
+                if (map) {
+                    return decodeURI(map[2]);
+                }
+            }
+            return null;
+        };
+
+        var myKey = "SecretKeyz";
+        var myDB = {
+            name: "indexDB",
+            version: 1,
+            db: null,
+            table: 'log',
+            colums: ["id", "creatTime", "data", "length", "size"],
+            defaultData: {id: -1, data: null}
+        };
+        var themes = ["github", "terminal", "tomorrow_night_blue", "twilight", "xcode"];
+        var language = "text";
+        $(document).ready(function () {
+            ace.require("ace/ext/language_tools");
+            //初始化对象
+            editor = ace.edit("code");
+            editor.setHighlightActiveLine(true);
+            var theme = getParams(theme);
+            if (!theme) {
+                theme = themes[parseInt(Math.random() * themes.length)];
+            }
+            editor.setTheme("ace/theme/" + theme);
+            editor.resize();
+            editor.session.setUseWrapMode(true);
+            editor.session.mergeUndoDeltas = true;
+            var lang = getParams("lang");
+            if (lang) {
+                language = lang;
+            }
+            editor.session.setMode("ace/mode/" + language);
+            editor.setFontSize(18);
+            editor.setOptions({
+                enableBasicAutocompletion: true,
+                enableSnippets: true,
+                enableLiveAutocompletion: true
+            });
+
+            var url = "http://api.openkeyval.org/" + myKey;
+            $.ajax({
+                url: url,
+                dataType: "jsonp",
+                success: function (data) {
+                    editor.setValue(data);
+                }
+            });
+
+
+            initDB(myDB.name, myDB.version);
+            setTimeout(function () {
+                selectByKey(myDB.db, myDB.table, -1);
+            }, 30);
+
+            $("#code").on("keydown", function (b) {
+                if (b.ctrlKey && 83 == b.which) {
+                    b.preventDefault();
+                    var data = editor.getValue();
+                    var now = new Date()
+                    setTimeout(function () {
+                        myDB.defaultData.creatTime = now;
+                        myDB.defaultData.data = data;
+                        insert(myDB.db, myDB.table, [myDB.defaultData, {creatTime: now, data: data}]);
+                        alert("Saved.");
+                    }, 10);
+                } else if (27 == b.which) {
+                    var del = confirm("要删除历史数据吗？");
+                    if (del) {
+                        clear(myDB.db, myDB.table);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
