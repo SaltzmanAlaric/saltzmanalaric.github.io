@@ -191,7 +191,7 @@
                     myDB.defaultData.data = data;
                     insert(myDB.db, myDB.table, [myDB.defaultData, {creatTime: now, data: data}]);
                     alert("Saved.");
-                } else if (b.ctrlKey) {
+                } else if (b.altKey) {
                     if(b.preventDefault){
                         b.preventDefault();
                     }else{
