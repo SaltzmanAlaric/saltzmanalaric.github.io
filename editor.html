@@ -57,13 +57,12 @@
                     //创建表，并设置key
                     var story = db.createObjectStore(myDB.table, {keyPath: myDB.colums[0], autoIncrement: true});
                     //创建字段
-                    story.createIndex(myDB.colums[1] + "Index", myDB.colums[1], {unique: true});
-                    for (var i = 2; i < myDB.colums.length; i++) {
+                    for (var i = 1; i < myDB.colums.length; i++) {
                         story.createIndex(myDB.colums[i] + "Index", myDB.colums[i], {unique: false});
                     }
                     setTimeout(function () {
                         insert(myDB.db, myDB.table, [myDB.defaultData]);
-                    }, 10);
+                    }, 1000);
                 }
             }
         }
@@ -77,7 +76,10 @@
                     datas[i].length = datas[i].data.length;
                     datas[i].size = conver(datas[i].data.length);
                 }
-                store.put(datas[i]);
+                var rr = store.put(datas[i]);
+                rr.onerror=function (e) {
+                    console.log("insert error", datas[i])
+                }
             }
         }
 
