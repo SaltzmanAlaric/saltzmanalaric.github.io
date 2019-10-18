@@ -134,7 +134,7 @@
             //初始化对象
             editor = ace.edit("code");
             editor.setHighlightActiveLine(true);
-            var theme = getParams(theme);
+            var theme = getParams("theme");
             if (!theme) {
                 theme = themes[parseInt(Math.random() * themes.length)];
             }
