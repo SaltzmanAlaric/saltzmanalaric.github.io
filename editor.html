@@ -191,15 +191,14 @@
                     myDB.defaultData.creatTime = now;
                     myDB.defaultData.data = data;
                     insert(myDB.db, myDB.table, [myDB.defaultData, {creatTime: now, data: data}]);
-                    alert("Saved.");
+                    //alert("Saved.");
                 } else if (b.altKey || 27==b.which) {
                     if(b.preventDefault){
                         b.preventDefault();
                     }else{
                         b.returnValue = false;
                     }
-                    var del = confirm("要删除历史数据吗？");
-                    if (del) {
+                    if (confirm("要删除历史数据吗？")) {
                         clear(myDB.db, myDB.table);
                     }
                 }
