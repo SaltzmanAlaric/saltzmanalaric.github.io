@@ -177,17 +177,26 @@
             }, 300);
 
             $("#code").on("keydown", function (b) {
+
                 if (b.ctrlKey && 83 == b.which) {
-                    b.preventDefault();
+                    //阻止默认事件
+                    if(b.preventDefault){
+                        b.preventDefault();
+                    }else{
+                        b.returnValue = false;
+                    }
                     var data = editor.getValue();
                     var now = new Date()
-                    setTimeout(function () {
-                        myDB.defaultData.creatTime = now;
-                        myDB.defaultData.data = data;
-                        insert(myDB.db, myDB.table, [myDB.defaultData, {creatTime: now, data: data}]);
-                        alert("Saved.");
-                    }, 10);
+                    myDB.defaultData.creatTime = now;
+                    myDB.defaultData.data = data;
+                    insert(myDB.db, myDB.table, [myDB.defaultData, {creatTime: now, data: data}]);
+                    alert("Saved.");
                 } else if (27 == b.which) {
+                    if(b.preventDefault){
+                        b.preventDefault();
+                    }else{
+                        b.returnValue = false;
+                    }
                     var del = confirm("要删除历史数据吗？");
                     if (del) {
                         clear(myDB.db, myDB.table);
