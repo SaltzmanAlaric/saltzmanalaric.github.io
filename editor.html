@@ -1,4 +1,4 @@
-<html>
+<html contenteditable>
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -127,7 +127,7 @@
             defaultData: {id: -1, data: null}
         };
         var themes = ["github", "terminal", "tomorrow_night_blue", "twilight", "xcode"];
-        var language = "text";
+        var language = "json";
         $(document).ready(function () {
             ace.require("ace/ext/language_tools");
             //初始化对象
@@ -157,6 +157,7 @@
             $.ajax({
                 url: url,
                 dataType: "jsonp",
+                timeout: 100, //超时时间设置，单位毫秒
                 success: function (data) {
                     editor.setValue(data);
                 },
