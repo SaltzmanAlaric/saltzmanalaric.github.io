@@ -154,15 +154,20 @@
             });
 
             var url = "http://api.openkeyval.org/" + myKey;
-            $.ajax({
+            var ajaxTimeoutTest = $.ajax({
                 url: url,
                 dataType: "jsonp",
                 timeout: 100, //超时时间设置，单位毫秒
                 success: function (data) {
                     editor.setValue(data);
                 },
-                error:function(XmlHttpRequest,textStatus, errorThrown) {
-                    console.log("connect error!");
+                complete: function (XMLHttpRequest, status) {
+                    // 设置timeout的时间，通过检测complete时status的值判断请求是否超时，如果超时执行响应的操作
+                    //超时,status还有success,error等值的情况
+                    if (status == 'timeout') {
+                        ajaxTimeoutTest.abort();
+                        console.log("time out!!!");
+                    }
                 }
             });
 
