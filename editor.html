@@ -359,6 +359,12 @@
                 enableLiveAutocompletion: true
             });
 
+            window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+            if (!window.indexedDB) {
+                console.log("Your Browser does not support IndexedDB");
+                return;
+            }
+
             initDB(myDB.name, myDB.version);
             setTimeout(function () {
                 selectByKey(myDB.db, myDB.table, -1);
