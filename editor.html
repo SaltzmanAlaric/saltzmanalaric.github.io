@@ -11,8 +11,215 @@
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
 </head>
 <body>
+<div style="height: 32px;text-align: center">
+    <!-- 选项来源： https://github.com/ajaxorg/ace -->
+风格：<select id="theme">
+    <option value="ambiance">ambiance</option>
+    <option value="chaos" selected>chaos</option>
+    <option value="chrome">chrome</option>
+    <option value="clouds">clouds</option>
+    <option value="clouds_midnight">clouds_midnight</option>
+    <option value="cobalt">cobalt</option>
+    <option value="crimson_editor">crimson_editor</option>
+    <option value="dawn">dawn</option>
+    <option value="dracula">dracula</option>
+    <option value="dreamweaver">dreamweaver</option>
+    <option value="eclipse">eclipse</option>
+    <option value="github">github</option>
+    <option value="gob">gob</option>
+    <option value="gruvbox">gruvbox</option>
+    <option value="idle_fingers">idle_fingers</option>
+    <option value="iplastic">iplastic</option>
+    <option value="katzenmilch">katzenmilch</option>
+    <option value="kr_theme">kr_theme</option>
+    <option value="kuroir">kuroir</option>
+    <option value="merbivore">merbivore</option>
+    <option value="merbivore_soft">merbivore_soft</option>
+    <option value="mono_industrial">mono_industrial</option>
+    <option value="monokai">monokai</option>
+    <option value="pastel_on_dark">pastel_on_dark</option>
+    <option value="solarized_dark">solarized_dark</option>
+    <option value="solarized_light">solarized_light</option>
+    <option value="sqlserver">sqlserver</option>
+    <option value="terminal">terminal</option>
+    <option value="textmate">textmate</option>
+    <option value="tomorrow">tomorrow</option>
+    <option value="tomorrow_night">tomorrow_night</option>
+    <option value="tomorrow_night_blue">tomorrow_night_blue</option>
+    <option value="tomorrow_night_bright">tomorrow_night_bright</option>
+    <option value="tomorrow_night_eighties">tomorrow_night_eighties</option>
+    <option value="twilight">twilight</option>
+    <option value="vibrant_ink">vibrant_ink</option>
+    <option value="xcode">xcode</option>
+
+</select>
+
+    &emsp;&emsp;语言：<select id="lang">
+    <option value="abap">abap</option>
+    <option value="abc">abc</option>
+    <option value="actionscript">actionscript</option>
+    <option value="ada">ada</option>
+    <option value="apache_conf">apache_conf</option>
+    <option value="apex">apex</option>
+    <option value="applescript">applescript</option>
+    <option value="aql">aql</option>
+    <option value="asciidoc">asciidoc</option>
+    <option value="asl">asl</option>
+    <option value="assembly_x86">assembly_x86</option>
+    <option value="autohotkey">autohotkey</option>
+    <option value="batchfile">batchfile</option>
+    <option value="behaviour">behaviour</option>
+    <option value="c9search">c9search</option>
+    <option value="c_cpp">c_cpp</option>
+    <option value="cirru">cirru</option>
+    <option value="clojure">clojure</option>
+    <option value="cobol">cobol</option>
+    <option value="coffee">coffee</option>
+    <option value="coldfusion">coldfusion</option>
+    <option value="crystal">crystal</option>
+    <option value="csharp">csharp</option>
+    <option value="csp">csp</option>
+    <option value="css">css</option>
+    <option value="curly">curly</option>
+    <option value="dart">dart</option>
+    <option value="diff">diff</option>
+    <option value="django">django</option>
+    <option value="dockerfile">dockerfile</option>
+    <option value="dot">dot</option>
+    <option value="drools">drools</option>
+    <option value="edifact">edifact</option>
+    <option value="eiffel">eiffel</option>
+    <option value="ejs">ejs</option>
+    <option value="elixir">elixir</option>
+    <option value="elm">elm</option>
+    <option value="erlang">erlang</option>
+    <option value="forth">forth</option>
+    <option value="fortran">fortran</option>
+    <option value="fsharp">fsharp</option>
+    <option value="fsl">fsl</option>
+    <option value="ftl">ftl</option>
+    <option value="gcode">gcode</option>
+    <option value="gherkin">gherkin</option>
+    <option value="gitignore">gitignore</option>
+    <option value="glsl">glsl</option>
+    <option value="gobstones">gobstones</option>
+    <option value="golang">golang</option>
+    <option value="graphqlschema">graphqlschema</option>
+    <option value="groovy">groovy</option>
+    <option value="haml">haml</option>
+    <option value="handlebars">handlebars</option>
+    <option value="haskell">haskell</option>
+    <option value="haxe">haxe</option>
+    <option value="hjson">hjson</option>
+    <option value="html">html</option>
+    <option value="ini">ini</option>
+    <option value="io">io</option>
+    <option value="jack">jack</option>
+    <option value="jade">jade</option>
+    <option value="java">java</option>
+    <option value="javascript">javascript</option>
+    <option value="json">json</option>
+    <option value="jsp">jsp</option>
+    <option value="jssm">jssm</option>
+    <option value="jsx">jsx</option>
+    <option value="julia">julia</option>
+    <option value="kotlin">kotlin</option>
+    <option value="latex">latex</option>
+    <option value="less">less</option>
+    <option value="liquid">liquid</option>
+    <option value="lisp">lisp</option>
+    <option value="livescript">livescript</option>
+    <option value="logiql">logiql</option>
+    <option value="logtalk">logtalk</option>
+    <option value="lsl">lsl</option>
+    <option value="lua">lua</option>
+    <option value="luapage">luapage</option>
+    <option value="lucene">lucene</option>
+    <option value="makefile">makefile</option>
+    <option value="markdown">markdown</option>
+    <option value="mask">mask</option>
+    <option value="matlab">matlab</option>
+    <option value="maze">maze</option>
+    <option value="mel">mel</option>
+    <option value="mixal">mixal</option>
+    <option value="mushcode">mushcode</option>
+    <option value="mysql">mysql</option>
+    <option value="nginx">nginx</option>
+    <option value="nim">nim</option>
+    <option value="nix">nix</option>
+    <option value="nsis">nsis</option>
+    <option value="objectivec">objectivec</option>
+    <option value="ocaml">ocaml</option>
+    <option value="pascal">pascal</option>
+    <option value="perl">perl</option>
+    <option value="perl6">perl6</option>
+    <option value="pgsql">pgsql</option>
+    <option value="php">php</option>
+    <option value="pig">pig</option>
+    <option value="plain_text" selected>plain_text</option>
+    <option value="powershell">powershell</option>
+    <option value="praat">praat</option>
+    <option value="prolog">prolog</option>
+    <option value="properties">properties</option>
+    <option value="puppet">puppet</option>
+    <option value="python">python</option>
+    <option value="r">r</option>
+    <option value="razor">razor</option>
+    <option value="rdoc">rdoc</option>
+    <option value="red">red</option>
+    <option value="redshift">redshift</option>
+    <option value="rhtml">rhtml</option>
+    <option value="rst">rst</option>
+    <option value="ruby">ruby</option>
+    <option value="rust">rust</option>
+    <option value="sass">sass</option>
+    <option value="scad">scad</option>
+    <option value="scala">scala</option>
+    <option value="scheme">scheme</option>
+    <option value="scss">scss</option>
+    <option value="sh">sh</option>
+    <option value="sjs">sjs</option>
+    <option value="slim">slim</option>
+    <option value="smarty">smarty</option>
+    <option value="snippets">snippets</option>
+    <option value="soy_template">soy_template</option>
+    <option value="space">space</option>
+    <option value="sparql">sparql</option>
+    <option value="sql">sql</option>
+    <option value="sqlserver">sqlserver</option>
+    <option value="stylus">stylus</option>
+    <option value="svg">svg</option>
+    <option value="swift">swift</option>
+    <option value="tcl">tcl</option>
+    <option value="terraform">terraform</option>
+    <option value="tex">tex</option>
+    <option value="text">text</option>
+    <option value="textile">textile</option>
+    <option value="toml">toml</option>
+    <option value="tsx">tsx</option>
+    <option value="turtle">turtle</option>
+    <option value="twig">twig</option>
+    <option value="typescript">typescript</option>
+    <option value="vala">vala</option>
+    <option value="vbscript">vbscript</option>
+    <option value="velocity">velocity</option>
+    <option value="verilog">verilog</option>
+    <option value="vhdl">vhdl</option>
+    <option value="visualforce">visualforce</option>
+    <option value="wollok">wollok</option>
+    <option value="xml">xml</option>
+    <option value="xquery">xquery</option>
+    <option value="yaml">yaml</option>
+    <option value="zeek">zeek</option>
+</select>
+</div>
     <!--代码输入框（注意请务必设置高度，否则无法显示）-->
-    <pre id="code" class="ace_editor" style="margin: 0 auto;min-height:100%;"><textarea class="ace_text-input"></textarea></pre>
+    <pre id="code" class="ace_editor" style="border-radius:30px;margin: 0 auto;min-height:96%;"><textarea class="ace_text-input"></textarea></pre>
+<a href="https://saltzmanalaric.github.io" class="github-corner" aria-label="View source on GitHub">
+    <svg width="60" height="60" viewBox="0 0 250 250" style="fill:#151513; color:#eee; position: absolute; top: 0; border: 0; right: 0;"
+         aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+</a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
     <script>
         //计算size大小
@@ -127,34 +334,9 @@
             defaultData: {id: -1, data: null}
         };
 
-        var themes = ["ambiance", "chaos", "chrome", "clouds", "clouds_midnight", "cobalt", "crimson_editor", "dawn", "dracula", "dreamweaver", "eclipse", "github", "gob", "gruvbox", "idle_fingers", "iplastic", "katzenmilch", "kr_theme", "kuroir", "merbivore", "merbivore_soft", "mono_industrial", "monokai", "pastel_on_dark", "solarized_dark", "solarized_light", "sqlserver", "terminal", "textmate", "tomorrow", "tomorrow_night", "tomorrow_night_blue", "tomorrow_night_bright", "tomorrow_night_eighties", "twilight", "vibrant_ink", "xcode"];
-        var language = "text";
-        $(document).ready(function () {
+        $(document).ready(function (){
             ace.require("ace/ext/language_tools");
-            //初始化对象
-            editor = ace.edit("code");
-            editor.setHighlightActiveLine(true);
-            var theme = getParams("theme");
-            if (!theme) {
-                theme = themes[parseInt(Math.random() * themes.length)];
-            }
-            editor.setTheme("ace/theme/" + theme);
-            editor.resize();
-            editor.setShowPrintMargin(true);
-            editor.session.setTabSize(4);
-            editor.session.setUseWrapMode(true);
-            editor.session.mergeUndoDeltas = true;
-            var lang = getParams("lang");
-            if (lang) {
-                language = lang;
-            }
-            editor.session.setMode("ace/mode/" + language);
-            editor.setFontSize(18);
-            editor.setOptions({
-                enableBasicAutocompletion: true,
-                enableSnippets: true,
-                enableLiveAutocompletion: true
-            });
+            chgEditor();
 
             var url = "http://api.openkeyval.org/" + myKey;
             var ajaxTimeoutTest = $.ajax({
@@ -180,7 +362,7 @@
             }, 300);
 
             $("#code").on("keydown", function (b) {
-
+                window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
                 if (b.ctrlKey && 83 == b.which) {
                     //阻止默认事件
                     if(b.preventDefault){
@@ -200,12 +382,42 @@
                     }else{
                         b.returnValue = false;
                     }
+
                     if (confirm("要删除历史数据吗？")) {
                         clear(myDB.db, myDB.table);
                     }
                 }
             });
         });
+
+        $("#theme").change(function () {
+            chgEditor();
+        });
+        $("#lang").change = function () {
+            chgEditor();
+        };
+
+        function chgEditor() {
+            //初始化对象
+            editor = ace.edit("code");
+            editor.setTheme("ace/theme/" + $("#theme").val());
+            editor.setHighlightActiveLine(true);
+            editor.resize();
+            editor.setFontSize(18);
+            editor.setShowPrintMargin(true);
+
+            editor.session.setMode("ace/mode/" + $("#lang").val());
+            editor.session.setTabSize(4);
+            editor.session.setUseWrapMode(true);
+            editor.session.mergeUndoDeltas = true;
+
+            editor.setOptions({
+                enableBasicAutocompletion: true,
+                enableSnippets: true,
+                enableLiveAutocompletion: true
+            });
+        }
+
     </script>
 </body>
 </html>
