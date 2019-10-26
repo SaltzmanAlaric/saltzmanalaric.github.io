@@ -3,21 +3,21 @@
 }
 
 .markdown-body ul,.markdown-body ol {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .markdown-body ul > li,
 .markdown-body ol > li {
   list-style: none;
-  position: relative;
+  /*position: relative;
   padding: 0 0 0 2em;
   margin: 0 0 .5em 10px;
   -webkit-transition: .12s;
-  transition: .12s;
+  transition: .12s;*/
 }
 .markdown-body ul > li::before,
 .markdown-body ol > li::before{
-  position: absolute;
   content: '\2022';
+  /*position: absolute;
   font-family: Arial;
   color: #FFF;
   top: 0;
@@ -27,59 +27,33 @@
   opacity: .5;
   line-height: .75;
   -webkit-transition: .5s;
-  transition: .5s;
+  transition: .5s;*/
 }
 .markdown-body ul > li:hover,
 .markdown-body ol > li:hover {
-  color: #FFF;
+  /*color: #FFF;*/
 }
 .markdown-body ul > li:hover::before,
 .markdown-body ol > li:hover::before {
-  -webkit-transform: scale(2);
+  /*-webkit-transform: scale(2);
   -ms-transform: scale(2);
   transform: scale(2);
   opacity: 1;
   text-shadow: 0 0 4px;
   -webkit-transition: .1s;
-  transition: .1s;
-}
-.live.type2 > li::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background: #FFF;
-  border-radius: 3px;
-  line-height: 0;
-  top: .27em;
-  left: 5px;
-}
-.live.type2 > li:hover::before {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  border-radius: 5px;
-  width: 25px;
-  left: -10px;
-  background: #BA5353;
-}
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto Condensed Regular"), local("RobotoCondensed-Regular"), url(http://themes.googleusercontent.com/static/fonts/robotocondensed/v7/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff) format("woff");
+  transition: .1s;*/
 }
 
 ol, ul {
   display: inline-block;
   text-align: left;
   vertical-align: top;
-  background: rgba(0, 0, 0, 0.2);
+  /*background: rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1.5em;
   margin: 2%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);*/
 }
 
 @media screen and (max-width: 800px) {
