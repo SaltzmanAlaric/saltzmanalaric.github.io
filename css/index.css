@@ -17,6 +17,8 @@
 .markdown-body ul > li::before,
 .markdown-body ol > li::before{
   content: '\2022';
+  -webkit-transition: .5s;
+  transition: .5s;
   /*position: absolute;
   font-family: Arial;
   color: #FFF;
@@ -25,9 +27,7 @@
   text-align: center;
   font-size: 2em;
   opacity: .5;
-  line-height: .75;
-  -webkit-transition: .5s;
-  transition: .5s;*/
+  line-height: .75;*/
 }
 .markdown-body ul > li:hover,
 .markdown-body ol > li:hover {
@@ -35,13 +35,13 @@
 }
 .markdown-body ul > li:hover::before,
 .markdown-body ol > li:hover::before {
-  /*-webkit-transform: scale(2);
+  -webkit-transform: scale(2);
   -ms-transform: scale(2);
   transform: scale(2);
   opacity: 1;
   text-shadow: 0 0 4px;
   -webkit-transition: .1s;
-  transition: .1s;*/
+  transition: .1s;
 }
 
 ol, ul {
