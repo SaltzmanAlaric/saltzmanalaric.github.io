@@ -16,7 +16,6 @@
   left: 0;
   text-align: center;
   font-size: 2em;
-  opacity: .5;
   line-height: .75;
   -webkit-transition: .5s;
           transition: .5s;
@@ -37,8 +36,8 @@
   content: '';
   width: 10px;
   height: 10px;
-  background: #FFF;
-  border-radius: 3px;
+  background: #000;
+  border-radius: 30px;
   line-height: 0;
   top: .38em;
   left: -16px;
