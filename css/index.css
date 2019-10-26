@@ -33,7 +33,6 @@
 }
 .markdown-body ul > li:hover,
 .markdown-body ol > li:hover {
-  font-size: 2em;
   /*color: #FFF;*/
 }
 .markdown-body ul > li:hover::before,
