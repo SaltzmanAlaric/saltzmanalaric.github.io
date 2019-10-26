@@ -34,6 +34,13 @@
 .markdown-body ul > li:hover,
 .markdown-body ol > li:hover {
   /*color: #FFF;*/
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  border-radius: 5px;
+   width: 25px;
+   left: -10px;
+  background: #BA5353;
 }
 .markdown-body ul > li:hover::before,
 .markdown-body ol > li:hover::before {
