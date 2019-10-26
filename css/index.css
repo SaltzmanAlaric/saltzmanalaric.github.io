@@ -2,18 +2,18 @@
   background: #fff;
 }
 
-.markdown-body ul,.markdown-body ol {
-  /*overflow: hidden;*/
+/*.markdown-body ul,.markdown-body ol {
+  !*overflow: hidden;*!
 }
 .markdown-body ul > li,
 .markdown-body ol > li {
   list-style: none;
   -webkit-transition: .12s;
   transition: .12s;
-  /*position: relative;
+  !*position: relative;
   padding: 0 0 0 2em;
   margin: 0 0 .5em 10px;
-  */
+  *!
 }
 .markdown-body ul > li::before,
 .markdown-body ol > li::before{
@@ -23,17 +23,17 @@
   line-height: .75;
   text-align: center;
 
-  /*position: absolute;
+  !*position: absolute;
   font-family: Arial;
   color: #FFF;
   top: 0;
   left: 0;
    opacity: .5;
-  */
+  *!
 }
 .markdown-body ul > li:hover,
 .markdown-body ol > li:hover {
-  /*color: #FFF;*/
+  !*color: #FFF;*!
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
@@ -57,13 +57,13 @@ ol, ul {
   display: inline-block;
   text-align: left;
   vertical-align: top;
-  /*background: rgba(0, 0, 0, 0.2);
+  !*background: rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1.5em;
   margin: 2%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);*/
-}
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);*!
+}*/
 
 @media screen and (max-width: 800px) {
     .page > div {
