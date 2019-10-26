@@ -19,15 +19,17 @@
   content: '\2022';
   -webkit-transition: .5s;
   transition: .5s;
+  font-size: 2em;
+  line-height: .75;
+  text-align: center;
+
   /*position: absolute;
   font-family: Arial;
   color: #FFF;
   top: 0;
   left: 0;
-  text-align: center;
-  font-size: 2em;
-  opacity: .5;
-  line-height: .75;*/
+   opacity: .5;
+  */
 }
 .markdown-body ul > li:hover,
 .markdown-body ol > li:hover {
