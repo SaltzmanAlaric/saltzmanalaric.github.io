@@ -8,8 +8,7 @@
           transition: .12s;
 }
 
-@media screen and (max-width: 800px) {
-
+@media screen and (min-width: 801px) {
   .live > li:hover {
     color: #BA5353;
   }
