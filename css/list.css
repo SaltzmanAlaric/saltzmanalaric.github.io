@@ -24,7 +24,7 @@
           transition: .5s;
 }
 .live > li:hover {
-  color: #FFF;
+  color: #BA5353;
 }
 .live > li:hover::before {
   -webkit-transform: scale(2);
@@ -98,7 +98,7 @@ body {
   background-image: radial-gradient(circle, #3c3b52 0%, #252233 80%);
 }
 
-h1 {
+h3 {
   margin: .5em 0 0;
   padding: 0;
   text-shadow: 0 4px rgba(0, 0, 0, 0.2);
@@ -110,14 +110,13 @@ h1 {
 }
 
 ol, ul {
-  width: 28%;
   display: inline-block;
   text-align: left;
   vertical-align: top;
-  background: rgba(0, 0, 0, 0.2);
+  /*background: rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1.5em;
   margin: 2%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);*/
 }
