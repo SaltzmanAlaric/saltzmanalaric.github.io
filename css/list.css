@@ -4,8 +4,6 @@
 .live > li {
   list-style: none;
   position: relative;
-  padding: 0 0 0 2em;
-  margin: 0 0 .5em 10px;
   -webkit-transition: .12s;
           transition: .12s;
 }
