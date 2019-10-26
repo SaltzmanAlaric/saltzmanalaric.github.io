@@ -42,8 +42,8 @@
   background: #FFF;
   border-radius: 3px;
   line-height: 0;
-  top: .27em;
-  left: 5px;
+  top: .38em;
+  left: -16px;
 }
 .live.type2 > li:hover::before {
   -webkit-transform: none;
@@ -51,7 +51,7 @@
           transform: none;
   border-radius: 5px;
   width: 25px;
-  left: -10px;
+  left: -30px;
   background: #BA5353;
 }
 
