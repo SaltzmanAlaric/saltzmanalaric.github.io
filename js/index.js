@@ -19,7 +19,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
       ];
       var random = Math.random();
       $(".page").css({"background": bgs[parseInt(random*bgs.length)], "backgroundSize": "100% 100%"});
-      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.1/static/"+ parseInt(random*10) +".mp3";
+      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.2/static/"+ parseInt(random*10) +".mp3";
   } else {
     $("#audio").remove();
   }
