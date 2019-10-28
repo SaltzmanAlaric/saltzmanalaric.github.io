@@ -1,22 +1,12 @@
-# Slide 1
+# 开始PPT之旅吧
 ===
-- Slide 2
-- Slide 2.1 <!-- .element: class="fragment" data-fragment-index="2" -->
-- Slide 2.2 <!-- .element: class="fragment" data-fragment-index="3" -->
-- Slide 2.3 <!-- .element: class="fragment" data-fragment-index="4" -->
+- 第一节 点击⬇
+- 再往下点⬇ <!-- .element: class="fragment" data-fragment-index="2" -->
+- 往下⬇ <!-- .element: class="fragment" data-fragment-index="3" -->
+- 欸，你真乖😜 再往右点击➡ <!-- .element: class="fragment" data-fragment-index="4" -->
 ===
-# 这是付费教程的升级
+# 这是另一个圈套哦
 ===
-还是下一个 圈钱<!-- .element: class="fragment" data-fragment-index="1" -->手段
+这个圈套就是<span>往右点击➡<!-- .element: class="fragment" data-fragment-index="1" --></span>
 ===
-# 主题1
-- 主题1-内容1
-- 主题1-内容2
-==
-## 主题1-内容1
-内容1-细节1
-==
-## 主题1-内容2
-内容1-细节2
-===
-# 主题2
+# 完了！
