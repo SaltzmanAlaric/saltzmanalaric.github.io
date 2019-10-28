@@ -133,7 +133,7 @@
   }
 
   .live > li:hover {
-    color: #BA5353;
+    /*color: #BA5353;*/
   }
   .live > li:hover::before {
     -webkit-transform: scale(2);
@@ -196,7 +196,7 @@
   background: #000;
   border-radius: 30px;
   line-height: 0;
-  top: .38em;
+  top: .36em;
   left: -16px;
 }
 

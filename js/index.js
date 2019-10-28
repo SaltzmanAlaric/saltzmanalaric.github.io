@@ -26,7 +26,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   var ctl = false;
   $('#musicBtn').click(function(){
     if(!$('#audio')[0].src.endsWith("static/zzz.mp3")) {
-      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.1/static/zzz.mp3";
+      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.2/static/zzz.mp3";
       $('.sitev span').bumpyText();
     }
     $('#audio')[0].loop=true;
