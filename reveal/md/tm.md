@@ -3,7 +3,8 @@
 # 第一节 点击<font color="red">⬇</font>
 - _再往下点_⬇ <!-- .element: class="fragment" data-fragment-index="2" -->
 - _往下_⬇ <!-- .element: class="fragment" data-fragment-index="3" -->
-- 欸，你真乖😜 _<font color="red">再往右点击➡<!-- .element: class="fragment" data-fragment-index="4" --></font>_
+- 欸，你真乖😜 <!-- .element: class="fragment" data-fragment-index="4" -->_<font color="red">再往右点击➡<!-- .element: class="fragment" 
+data-fragment-index="5" --></font>_
 ===
 # 这是另一个圈套哦
 
