@@ -21,9 +21,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-					<section id="md" data-markdown="./tm.md" data-separator="===" data-separator-vertical="=="  data-separator-notes="^Note:">
-					</section>
-
+					<section id="md" data-markdown="./README.md" data-separator="===" data-separator-vertical="=="  data-separator-notes="^Note:"></section>
 			</div>
 		</div>
 
@@ -40,9 +38,9 @@
 				}
 				return null;
 			};
-			var md = getParams("md");
-			if (md) {
-				document.getElementById( 'md' ).setAttribute('data-markdown', md);
+			var mdName = getParams("md");
+			if (mdName) {
+				document.getElementById( 'md' ).setAttribute('data-markdown', "./md/" + mdName + ".md");
 			}
 
 			// More info about config & dependencies:
