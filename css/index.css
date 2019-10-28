@@ -4,6 +4,10 @@
   background: #fff;
 }
 
+pre:hover {
+  box-shadow: 0 8px 16px rgba(0,40,160,.08), 0 8px 24px rgba(0,0,0,.08);
+}
+
 @media screen and (max-width: 800px) {
     .page > div {
       max-width: 100%;
