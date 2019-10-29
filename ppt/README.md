@@ -6,8 +6,8 @@
 - 欸，你真乖😜 <!-- .element: class="fragment" data-fragment-index="4" -->_<font color="red">再往右点击➡<!-- .element: class="fragment" 
 data-fragment-index="5" --></font>_
 ===
-# 这是另一个圈套哦
+# 第二节 这是另一个圈套哦
 
-_这个圈套就是<font color="red">往右点击➡<!-- .element: class="fragment" data-fragment-index="1" --></font>_
+_我保证这是最后一个圈套，这个圈套就是<font color="red">往右点击➡<!-- .element: class="fragment" data-fragment-index="1" --></font>_
 ===
-# 完了！
+# 完了！^_^
