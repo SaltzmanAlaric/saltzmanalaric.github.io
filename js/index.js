@@ -40,19 +40,19 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     ctl = !ctl;
   });
 
+  // 剪贴板带上文档信息
  function addLink() {
      var body_element = document.body;
      var selection;
      var blogName = window.config.title;
+     var author = window.config.authors;
      selection = window.getSelection() ? window.getSelection() : document.selection.createRange().text;
+     var pagelink ="<br/>---------------------转载请注明出处<br/>本文来源："+blogName+"<br/>本文作者："+author+"<br/>原文链接："+document.location.href+"";
+     var copyText = selection + pagelink;
      if (window.clipboardData) {
-         var pagelink ="<br/>---------------------<br/>本文来源："+blogName+"<br/>原文链接："+document.location.href+"";
-         var copyText = selection + pagelink;
          window.clipboardData.setData ("Text", copyText);
          return false;
      } else {
-         var pagelink = "<br/>---------------------<br/>本文来源："+blogName+"<br/>原文链接："+document.location.href+"";
-         var copyText = selection + pagelink;
          var newDiv = document.createElement('div');
          newDiv.style.position ='absolute';
          newDiv.style.left ='-99999px';
