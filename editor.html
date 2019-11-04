@@ -9,11 +9,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        @keyframes octocat-wave {
+            0%, 100% {
+                transform: rotate(0)
+            }
+            20%, 60% {
+                transform: rotate(-25deg)
+            }
+            40%, 80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width: 500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
 </head>
 <body>
 <div style="height: 32px;text-align: center">
     <!-- 选项来源： https://github.com/ajaxorg/ace -->
-风格：<select id="theme">
+    风格：<select id="theme">
     <option value="ambiance">ambiance</option>
     <option value="chaos" selected>chaos</option>
     <option value="chrome">chrome</option>
@@ -209,226 +236,226 @@
     <option value="zeek">zeek</option>
 </select>
 </div>
-    <!--代码输入框（注意请务必设置高度，否则无法显示）-->
-    <pre id="code" class="ace_editor" style="margin: 0 auto;min-height:96%;"><textarea class="ace_text-input"></textarea></pre>
+<!--代码输入框（注意请务必设置高度，否则无法显示）-->
+<pre id="code" class="ace_editor" style="margin: 0 auto;min-height:96%;"><textarea class="ace_text-input"></textarea></pre>
 <a href="https://saltzmanalaric.github.io" class="github-corner" aria-label="View source on GitHub">
     <svg height="24" style="fill:#151513; color:#eee; position: absolute; top: 8px; border: 0; right: 8px;" class="octicon octicon-mark-github"
          viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
         <path fill-rule="evenodd"
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+    </svg>
 </a>
-<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
-    <script>
-        //计算size大小
-        function conver(limit) {
-            if (!limit) {
-                return null;
-            }
-            var size = "";
-            if (limit < 0.1 * 1024) { //如果小于0.1KB转化成B
-                size = limit.toFixed(2) + "B";
-            } else if (limit < 0.1 * 1024 * 1024) {//如果小于0.1MB转化成KB
-                size = (limit / 1024).toFixed(2) + "KB";
-            } else if (limit < 0.1 * 1024 * 1024 * 1024) { //如果小于0.1GB转化成MB
-                size = (limit / (1024 * 1024)).toFixed(2) + "MB";
-            } else { //其他转化成GB
-                size = (limit / (1024 * 1024 * 1024)).toFixed(2) + "GB";
-            }
-
-            var sizestr = size + "";
-            var len = sizestr.indexOf("\.");
-            var dec = sizestr.substr(len + 1, 2);
-            if (dec == "00") {//当小数点后为00时 去掉小数部分
-                return sizestr.substring(0, len) + sizestr.substr(len + 3, 2);
-            }
-            return sizestr;
-        }
-
-        //初始化数据库
-        function initDB(name, version) {
-            var version = version || 1;
-            var request = window.indexedDB.open(name, version);
-            request.onerror = function (e) {
-            }
-            request.onsuccess = function (e) {
-                myDB.db = e.target.result;
-            }
-            //数据表 操作
-            request.onupgradeneeded = function (e) {
-                var db = e.target.result;
-                //如果没有表
-                if (!db.objectStoreNames.contains(myDB.table)) {
-                    //创建表，并设置key
-                    var story = db.createObjectStore(myDB.table, {keyPath: myDB.colums[0], autoIncrement: true});
-                    //创建字段
-                    for (var i = 1; i < myDB.colums.length; i++) {
-                        story.createIndex(myDB.colums[i] + "Index", myDB.colums[i], {unique: false});
-                    }
-                }
-            }
-            request.oncomplete=function(event) {
-                setTimeout(function () {
-                    insert(myDB.db, myDB.table, [myDB.defaultData]);
-                }, 100);
-            }
-        }
-
-        //添加数据
-        function insert(db, storeName, datas) {
-            var transaction = db.transaction(storeName, "readwrite");//读取权限
-            var store = transaction.objectStore(storeName);
-            for (var i = 0; i < datas.length; i++) {
-                if (datas[i].data) {
-                    datas[i].length = datas[i].data.length;
-                    datas[i].size = conver(datas[i].data.length);
-                    datas[i].theme = datas[i].data.theme ? datas[i].data.theme : $("#theme").val();
-                    datas[i].lang = datas[i].data.lang ? datas[i].data.lang : $("#lang").val();
-                }
-                var rr = store.put(datas[i]);
-                rr.onerror=function (e) {
-                    console.log("insert error", datas[i])
-                }
-            }
-        }
-
-        //通过主键来获取数据
-        async function selectByKey(db, storeName, key) {
-            //通过链接来获取数据表（数据仓库）
-            var transaction = db.transaction(storeName);
-            //实例化数据表
-            var store = transaction.objectStore(storeName);
-            store.get(key).onsuccess = function (e) {
-                var data = e.target.result;
-                if (data && data.data) {
-                    ace.edit("code").setValue(data.data);
-                    $("#theme").val(data.theme);
-                    $("#lang").val(data.lang);
-                }
-            }
-            transaction.oncomplete=function(event) {
-                chgEditor(ace.edit("code"));
-            }
-        }
-
-        //清空数据
-        function clear(db, storeName) {
-            var request = db.transaction(storeName, 'readwrite').objectStore(storeName).clear();
-            request.onsuccess = function (e) {
-                console.log("清空成功");
-            }
-        }
-
-        //获取url参数
-        var getParams = function (key) {
-            var params = window.location.search.split('?')[1];
-            if (params) {
-                var map = params.match("(^|&)" + key + "=([^&]*)");
-                if (map) {
-                    return decodeURI(map[2]);
-                }
-            }
+<script>
+    //计算size大小
+    function conver(limit) {
+        if (!limit) {
             return null;
-        };
-
-        var myKey = "SecretKeyz";
-        var myDB = {
-            name: "indexDB",
-            version: 1,
-            db: null,
-            table: 'log',
-            colums: ["id", "creatTime", "data", "length", "size", "theme", "lang"],
-            defaultData: {id: -1, data: null, theme:null, lang:null}
-        };
-
-
-        $(document).ready(function (){
-            ace.require("ace/ext/language_tools");
-            //初始化对象
-            editor = ace.edit("code");
-            editor.setHighlightActiveLine(true);
-            editor.resize();
-            editor.setFontSize(18);
-            editor.setShowPrintMargin(true);
-            editor.session.setTabSize(4);
-            editor.session.setUseWrapMode(true);
-            editor.session.mergeUndoDeltas = true;
-            editor.setOptions({
-                enableBasicAutocompletion: true,
-                enableSnippets: true,
-                enableLiveAutocompletion: true
-            });
-
-            window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
-            if (!window.indexedDB) {
-                console.log("Your Browser does not support IndexedDB");
-                return;
-            }
-
-            initDB(myDB.name, myDB.version);
-            setTimeout(function () {
-                selectByKey(myDB.db, myDB.table, -1);
-            }, 300);
-
-            var url = "http://api.openkeyval.org/" + myKey;
-            var ajaxTimeoutTest = $.ajax({
-                url: url,
-                dataType: "jsonp",
-                timeout: 100, //超时时间设置，单位毫秒
-                success: function (data) {
-                    editor.setValue(data);
-                },
-                complete: function (XMLHttpRequest, status) {
-                    // 设置timeout的时间，通过检测complete时status的值判断请求是否超时，如果超时执行响应的操作
-                    //超时,status还有success,error等值的情况
-                    if (status == 'timeout') {
-                        ajaxTimeoutTest.abort();
-                        console.log("time out!!!");
-                    }
-                }
-            });
-
-            $("#code").on("keydown", function (b) {
-                window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
-                if (b.ctrlKey && 83 == b.which) {
-                    //阻止默认事件
-                    if(b.preventDefault){
-                        b.preventDefault();
-                    }else{
-                        b.returnValue = false;
-                    }
-                    var data = editor.getValue();
-                    var now = new Date()
-                    myDB.defaultData.creatTime = now;
-                    myDB.defaultData.data = data;
-                    insert(myDB.db, myDB.table, [myDB.defaultData, {creatTime: now, data: data}]);
-                    //alert("Saved.");
-                } else if (b.altKey || 27==b.which) {
-                    if(b.preventDefault){
-                        b.preventDefault();
-                    }else{
-                        b.returnValue = false;
-                    }
-
-                    if (confirm("要删除历史数据吗？")) {
-                        clear(myDB.db, myDB.table);
-                    }
-                }
-            });
-        });
-
-        $("#theme").change(function () {
-            chgEditor(ace.edit("code"));
-        });
-        $("#lang").change = function () {
-            chgEditor(ace.edit("code"));
-        };
-
-        function chgEditor(editor) {
-            editor.setTheme("ace/theme/" + $("#theme").val());
-            editor.session.setMode("ace/mode/" + $("#lang").val());
+        }
+        var size = "";
+        if (limit < 0.1 * 1024) { //如果小于0.1KB转化成B
+            size = limit.toFixed(2) + "B";
+        } else if (limit < 0.1 * 1024 * 1024) {//如果小于0.1MB转化成KB
+            size = (limit / 1024).toFixed(2) + "KB";
+        } else if (limit < 0.1 * 1024 * 1024 * 1024) { //如果小于0.1GB转化成MB
+            size = (limit / (1024 * 1024)).toFixed(2) + "MB";
+        } else { //其他转化成GB
+            size = (limit / (1024 * 1024 * 1024)).toFixed(2) + "GB";
         }
 
-    </script>
+        var sizestr = size + "";
+        var len = sizestr.indexOf("\.");
+        var dec = sizestr.substr(len + 1, 2);
+        if (dec == "00") {//当小数点后为00时 去掉小数部分
+            return sizestr.substring(0, len) + sizestr.substr(len + 3, 2);
+        }
+        return sizestr;
+    }
+
+    //初始化数据库
+    function initDB(name, version) {
+        var version = version || 1;
+        var request = window.indexedDB.open(name, version);
+        request.onerror = function (e) {
+        }
+        request.onsuccess = function (e) {
+            myDB.db = e.target.result;
+        }
+        //数据表 操作
+        request.onupgradeneeded = function (e) {
+            var db = e.target.result;
+            //如果没有表
+            if (!db.objectStoreNames.contains(myDB.table)) {
+                //创建表，并设置key
+                var story = db.createObjectStore(myDB.table, {keyPath: myDB.colums[0], autoIncrement: true});
+                //创建字段
+                for (var i = 1; i < myDB.colums.length; i++) {
+                    story.createIndex(myDB.colums[i] + "Index", myDB.colums[i], {unique: false});
+                }
+            }
+        }
+        request.oncomplete = function (event) {
+            setTimeout(function () {
+                insert(myDB.db, myDB.table, [myDB.defaultData]);
+            }, 100);
+        }
+    }
+
+    //添加数据
+    function insert(db, storeName, datas) {
+        var transaction = db.transaction(storeName, "readwrite");//读取权限
+        var store = transaction.objectStore(storeName);
+        for (var i = 0; i < datas.length; i++) {
+            if (datas[i].data) {
+                datas[i].length = datas[i].data.length;
+                datas[i].size = conver(datas[i].data.length);
+                datas[i].theme = datas[i].data.theme ? datas[i].data.theme : $("#theme").val();
+                datas[i].lang = datas[i].data.lang ? datas[i].data.lang : $("#lang").val();
+            }
+            var rr = store.put(datas[i]);
+            rr.onerror = function (e) {
+                console.log("insert error", datas[i])
+            }
+        }
+    }
+
+    //通过主键来获取数据
+    async function selectByKey(db, storeName, key) {
+        //通过链接来获取数据表（数据仓库）
+        var transaction = db.transaction(storeName);
+        //实例化数据表
+        var store = transaction.objectStore(storeName);
+        store.get(key).onsuccess = function (e) {
+            var data = e.target.result;
+            if (data && data.data) {
+                ace.edit("code").setValue(data.data);
+                $("#theme").val(data.theme);
+                $("#lang").val(data.lang);
+            }
+        }
+        transaction.oncomplete = function (event) {
+            chgEditor(ace.edit("code"));
+        }
+    }
+
+    //清空数据
+    function clear(db, storeName) {
+        var request = db.transaction(storeName, 'readwrite').objectStore(storeName).clear();
+        request.onsuccess = function (e) {
+            console.log("清空成功");
+        }
+    }
+
+    //获取url参数
+    var getParams = function (key) {
+        var params = window.location.search.split('?')[1];
+        if (params) {
+            var map = params.match("(^|&)" + key + "=([^&]*)");
+            if (map) {
+                return decodeURI(map[2]);
+            }
+        }
+        return null;
+    };
+
+    var myKey = "SecretKeyz";
+    var myDB = {
+        name: "indexDB",
+        version: 1,
+        db: null,
+        table: 'log',
+        colums: ["id", "creatTime", "data", "length", "size", "theme", "lang"],
+        defaultData: {id: -1, data: null, theme: null, lang: null}
+    };
+
+
+    $(document).ready(function () {
+        ace.require("ace/ext/language_tools");
+        //初始化对象
+        editor = ace.edit("code");
+        editor.setHighlightActiveLine(true);
+        editor.resize();
+        editor.setFontSize(18);
+        editor.setShowPrintMargin(true);
+        editor.session.setTabSize(4);
+        editor.session.setUseWrapMode(true);
+        editor.session.mergeUndoDeltas = true;
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
+
+        window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+        if (!window.indexedDB) {
+            console.log("Your Browser does not support IndexedDB");
+            return;
+        }
+
+        initDB(myDB.name, myDB.version);
+        setTimeout(function () {
+            selectByKey(myDB.db, myDB.table, -1);
+        }, 300);
+
+        var url = "http://api.openkeyval.org/" + myKey;
+        var ajaxTimeoutTest = $.ajax({
+            url: url,
+            dataType: "jsonp",
+            timeout: 100, //超时时间设置，单位毫秒
+            success: function (data) {
+                editor.setValue(data);
+            },
+            complete: function (XMLHttpRequest, status) {
+                // 设置timeout的时间，通过检测complete时status的值判断请求是否超时，如果超时执行响应的操作
+                //超时,status还有success,error等值的情况
+                if (status == 'timeout') {
+                    ajaxTimeoutTest.abort();
+                    console.log("time out!!!");
+                }
+            }
+        });
+
+        $("#code").on("keydown", function (b) {
+            window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
+            if (b.ctrlKey && 83 == b.which) {
+                //阻止默认事件
+                if (b.preventDefault) {
+                    b.preventDefault();
+                } else {
+                    b.returnValue = false;
+                }
+                var data = editor.getValue();
+                var now = new Date()
+                myDB.defaultData.creatTime = now;
+                myDB.defaultData.data = data;
+                insert(myDB.db, myDB.table, [myDB.defaultData, {creatTime: now, data: data}]);
+                //alert("Saved.");
+            } else if (b.altKey || 27 == b.which) {
+                if (b.preventDefault) {
+                    b.preventDefault();
+                } else {
+                    b.returnValue = false;
+                }
+
+                if (confirm("要删除历史数据吗？")) {
+                    clear(myDB.db, myDB.table);
+                }
+            }
+        });
+    });
+
+    $("#theme").change(function () {
+        chgEditor(ace.edit("code"));
+    });
+    $("#lang").change = function () {
+        chgEditor(ace.edit("code"));
+    };
+
+    function chgEditor(editor) {
+        editor.setTheme("ace/theme/" + $("#theme").val());
+        editor.session.setMode("ace/mode/" + $("#lang").val());
+    }
+
+</script>
 </body>
 </html>
