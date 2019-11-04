@@ -47,7 +47,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
      var blogName = window.config.title;
      var author = window.config.authors;
      selection = window.getSelection() ? window.getSelection() : document.selection.createRange().text;
-     var pagelink ="<br/>---------------------转载请注明出处<br/>本文来源："+blogName+"<br/>本文作者："+author+"<br/>原文链接："+document.location.href+"";
+     var pagelink ="<br/><br/>---------------------转载请注明出处---------------------<br/>本文来源："+blogName+"<br/>本文作者："+author+"<br/>原文链接："+document.location.href+"";
      var copyText = selection + pagelink;
      if (window.clipboardData) {
          window.clipboardData.setData ("Text", copyText);
