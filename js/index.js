@@ -63,4 +63,4 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
          },0);
      }
  }
- document.oncopy = addLink;
+ //document.oncopy = addLink;
