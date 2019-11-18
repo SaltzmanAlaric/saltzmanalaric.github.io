@@ -122,7 +122,7 @@ var timeBar = function() {
 
   $("#timeProcess").css({ left: (($("#user").width() - widths)/2+20)+"px"});
   // 清除画布
-  ctx.clearRect(0, 0, widths, heights);
+  ctx.clearRect(0,0,c.width,c.height);
   ctx.beginPath();
   ctx.strokeStyle = '#FF4500';
   ctx.lineCap = 'square';
@@ -135,7 +135,7 @@ var timeBar = function() {
   function draw(current) {
     ctx.putImageData(imd, 0, 0);
     ctx.beginPath();
-    ctx.arc((widths<90? widths+24: widths)/2, (heights <90 ? heights+24: heights) /2, (heights <90 ? heights+24: heights)/2-2, -(quart), ((circ) * current) - quart, false);
+    ctx.arc((widths<90? widths+24: widths)/2, (heights <90 ? heights+24: heights) /2, (heights <90 ? heights+22: heights)/2-2, -(quart), ((circ) * current) - quart, false);
     ctx.stroke();
   }
   //draw(0.6);
