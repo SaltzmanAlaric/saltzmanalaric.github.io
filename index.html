@@ -138,7 +138,7 @@ var timeBar = function() {
     ctx.arc(widths/2, heights/2, heights/2-2, -(quart), ((circ) * current) - quart, false);
     ctx.stroke();
   }
-
+  console.log("圆心："+ widths/2+"," +heights/2+",半径:" + (heights/2-2));
   //draw(0.6);
   var t = 0;
   var timer = null;
