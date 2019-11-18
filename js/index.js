@@ -40,51 +40,56 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     ctl = !ctl;
   });
 
+ $(document).ready(function() {
+     var c = document.getElementById("timeProcess");//找到 <canvas> 元素:
+     var ctx = c.getContext("2d");  //创建context对象
+     var circ = Math.PI * 2;
+     var quart = Math.PI / 2;
+     var circ = Math.PI * 2;
+     var quart = Math.PI / 2;
+     var myCanvas_rect = c.getBoundingClientRect();
+     var widths = myCanvas_rect.width;
+     var heights = myCanvas_rect.height;
 
- var c=document.getElementById("timeProcess");//找到 <canvas> 元素:
- var ctx=c.getContext("2d");  //创建context对象
- var circ = Math.PI * 2;
- var quart = Math.PI / 2;
- var circ = Math.PI * 2;
- var quart = Math.PI / 2;
- var myCanvas_rect = c.getBoundingClientRect();
- var widths = myCanvas_rect.width;
- var heights = myCanvas_rect.height;
-
- // 清除画布
- ctx.clearRect(0, 0, widths, heights);
- ctx.beginPath();
- ctx.strokeStyle = '#FF4500';
- ctx.lineCap = 'square';
- ctx.closePath();
- ctx.fill();
- ctx.lineWidth = 4.0;
-
- var imd = ctx.getImageData(0, 0, widths, heights);
- function draw(current){
-     ctx.putImageData(imd, 0, 0);
+     // 清除画布
+     ctx.clearRect(0, 0, widths, heights);
      ctx.beginPath();
-     ctx.arc(55, 55, 50, -(quart), ((circ) * current) - quart, false);
-     ctx.stroke();
- }
- //draw(0.6);
- var t=0;
- var timer=null;
- function loadCanvas(now){
-     timer = setInterval(function(){
-         if(t>now){
-             draw(now);//最后一次绘制
-             clearInterval(timer);
-         }else{
-             draw(t);
-             t+=0.01;
-         }
-     },20);
- }
- var now = new Date();
- var spendRate = (now.getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime())/(new Date(now.getFullYear() + '-12-31 23:59:59').getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime());
- loadCanvas(spendRate);
- timer=null;
+     ctx.strokeStyle = '#FF4500';
+     ctx.lineCap = 'square';
+     ctx.closePath();
+     ctx.fill();
+     ctx.lineWidth = 4.0;
+
+     var imd = ctx.getImageData(0, 0, widths, heights);
+
+     function draw(current) {
+         ctx.putImageData(imd, 0, 0);
+         ctx.beginPath();
+         ctx.arc(55, 55, 50, -(quart), ((circ) * current) - quart, false);
+         ctx.stroke();
+     }
+
+     //draw(0.6);
+     var t = 0;
+     var timer = null;
+
+     function loadCanvas(now) {
+         timer = setInterval(function () {
+             if (t > now) {
+                 draw(now);//最后一次绘制
+                 clearInterval(timer);
+             } else {
+                 draw(t);
+                 t += 0.01;
+             }
+         }, 20);
+     }
+
+     var now = new Date();
+     var spendRate = (now.getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime()) / (new Date(now.getFullYear() + '-12-31 23:59:59').getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime());
+     loadCanvas(spendRate);
+     timer = null;
+ });
 
   // 剪贴板带上文档信息
  function addLink() {
