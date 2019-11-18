@@ -40,7 +40,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
     ctl = !ctl;
   });
 
- $(document).ready(function() {
+ var a = function() {
      var c = document.getElementById("timeProcess");//找到 <canvas> 元素:
      var ctx = c.getContext("2d");  //创建context对象
      var circ = Math.PI * 2;
@@ -89,7 +89,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
      var spendRate = (now.getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime()) / (new Date(now.getFullYear() + '-12-31 23:59:59').getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime());
      loadCanvas(spendRate);
      timer = null;
- });
+ }
 
   // 剪贴板带上文档信息
  function addLink() {
