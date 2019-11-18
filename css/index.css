@@ -11,7 +11,6 @@ canvas#timeProcess {
   position: absolute;
   top: 50px;
   width: 110px;
-  left: 50%;
 }
 
 @media screen and (max-width: 800px) {
