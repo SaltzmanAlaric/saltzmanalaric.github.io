@@ -24,18 +24,18 @@ canvas#timeProcess {
     .comment-list .comment-body span {
       display: none;
     }
+  canvas#timeProcess {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    margin-top: 30px;
+  }
   }
   /*隐藏评论
   #comments > a,
   #post > a.button{
     display: none;
   }*/
-  canvas#timeProcess {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    margin-top: 30px;
-  }
   #labels {
       margin: 0 auto;
   }
