@@ -110,7 +110,7 @@ L2Dwidget.init({
 //一年进度条
 var timeBar = function() {
   var c = document.getElementById("timeProcess");//找到 <canvas> 元素:
-  $("#timeProcess").css({ left: (($("#user").width() - 110)/2+20)+"px"});
+
   var ctx = c.getContext("2d");  //创建context对象
   var circ = Math.PI * 2;
   var quart = Math.PI / 2;
@@ -120,6 +120,7 @@ var timeBar = function() {
   var widths = myCanvas_rect.width;
   var heights = myCanvas_rect.height;
 
+  $("#timeProcess").css({ left: (($("#user").width() - widths)/2+20)+"px"});
   // 清除画布
   ctx.clearRect(0, 0, widths, heights);
   ctx.beginPath();
@@ -134,7 +135,7 @@ var timeBar = function() {
   function draw(current) {
     ctx.putImageData(imd, 0, 0);
     ctx.beginPath();
-    ctx.arc(widths/2, heights/2, heights/2, -(quart), ((circ) * current) - quart, false);
+    ctx.arc(widths/2, heights/2, heights/2-2, -(quart), ((circ) * current) - quart, false);
     ctx.stroke();
   }
 
