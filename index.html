@@ -135,10 +135,9 @@ var timeBar = function() {
   function draw(current) {
     ctx.putImageData(imd, 0, 0);
     ctx.beginPath();
-    ctx.arc(widths/2, heights/2, heights/2-2, -(quart), ((circ) * current) - quart, false);
+    ctx.arc((widths<90? widths+20: widths)/2, (heights <90 ? heights+20: heights) /2, heights/2-2, -(quart), ((circ) * current) - quart, false);
     ctx.stroke();
   }
-  console.log("圆心："+ widths/2+"," +heights/2+",半径:" + (heights/2-2));
   //draw(0.6);
   var t = 0;
   var timer = null;
