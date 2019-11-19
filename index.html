@@ -109,8 +109,11 @@ L2Dwidget.init({
 
 // 返回上一页
 var goBack = function () {
-  var hasHome = !!$(".page #user")[0].innerText;
-  hasHome ? window.history.back() : window.location.hash="#/";
+  var isHome = !!$(".page-current #user")[0];
+  if (isHome) {
+    return false;
+  }
+  !!$(".page #user")[0].innerText ? window.history.back() : window.location.hash="#/";
 }
 
 // 一年进度条
