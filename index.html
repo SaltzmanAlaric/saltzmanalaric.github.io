@@ -163,6 +163,7 @@ var timeBar = function() {
 
   var now = new Date();
   var spendRate = (now.getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime()) / (new Date(now.getFullYear() + '-12-31 23:59:59').getTime() - new Date(now.getFullYear() + '-01-01 00:00:00').getTime());
+  console.log('%c'+ now.getFullYear()+ "%c年已经过去%c "+(spendRate*100).toFixed(2)+"% %c了，珍惜当下，莫虚度光阴！", 'font-style:italic;','font-weight:bold;','font-style:italic;color:red;','font-weight:bold;');
   loadCanvas(spendRate);
   timer = null;
 }
