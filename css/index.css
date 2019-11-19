@@ -19,6 +19,7 @@ canvas#timeProcess {
       max-width: 100%;
     }
     .sitev,
+    .kotori-show,
     /*隐藏时间*/
     #post > p,
     .comment-list .comment-body span {
@@ -143,6 +144,22 @@ canvas#timeProcess {
     opacity: 1;
     cursor: default;
   }
+
+  .kotori-show {
+    line-height: 1.4;
+    text-align: center;
+    font-size: 14px;
+    color: #917159;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+    z-index: 99999;
+    opacity: 1;
+    cursor: default;
+  }
+
   #musicBtn {
     display: inline;
     pointer-events: auto;
