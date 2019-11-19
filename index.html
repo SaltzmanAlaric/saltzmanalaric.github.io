@@ -110,11 +110,7 @@ L2Dwidget.init({
 // 返回上一页
 var goBack = function () {
   var hasHome = !!$(".page #user")[0].innerText;
-  if (hasHome) {
-    window.history.go(-1);
-  } else {
-    window.location.href = '#/';
-  }
+  hasHome ? window.history.back() : window.location.hash="#/";
 }
 
 // 一年进度条
