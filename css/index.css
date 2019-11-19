@@ -139,7 +139,7 @@ canvas#timeProcess {
     bottom: 0px;
     right: 0px;
     width: 200px;
-    height: 30px;
+    height: 24px;
     z-index: 99999;
     opacity: 1;
     cursor: default;
