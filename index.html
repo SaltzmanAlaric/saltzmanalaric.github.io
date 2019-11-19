@@ -107,7 +107,15 @@ L2Dwidget.init({
   }
 });
 
-//一年进度条
+// 返回上一页
+var goBack = function () {
+  if (document.referrer === '' || document.referrer.startsWith("https://")) {
+  } else {
+    window.history.go(-1);
+  }
+}
+
+// 一年进度条
 var timeBar = function() {
   var c = document.getElementById("timeProcess");//找到 <canvas> 元素:
 
@@ -181,7 +189,7 @@ var timeBar = function() {
 <script src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.8/lib/index.04eb6053.js"></script>
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="sitev"><div id="musicBtn">💎</div><span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人</div>
-<div class="kotori-show"><img src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.8/static/images/kotori.png" alt="抢镜脸" title="返回上一级" onclick="window.history.back()" /></div>
+<div class="kotori-show"><img src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.8/static/images/kotori.png" alt="抢镜脸" title="返回上一级" href="#/" /></div>
 <script src="js/index.js"></script>
 </body>
 </html>
