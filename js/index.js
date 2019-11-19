@@ -20,21 +20,23 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
       var random = Math.random();
       $(".page").css({"background": bgs[parseInt(random*bgs.length)], "backgroundSize": "100% 100%"});
       $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.8/static/"+ parseInt(random*10) +".mp3";
+      $('#audio')[0].volume = 0.3;
   } else {
     $("#audio").remove();
   }
   var ctl = false;
   $('#musicBtn').click(function(){
     if(!$('#audio')[0].src.endsWith("static/zzz.mp3")) {
-      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.8/static/zzz.mp3";
-      $('.sitev span').bumpyText();
+        $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.8/static/zzz.mp3";
+        $('.sitev span').bumpyText();
     }
-    $('#audio')[0].loop=true;
+      $('#audio')[0].volume = 0.3;
+      $('#audio')[0].loop=true;
     if(ctl){
-      $('#audio')[0].pause();
-      this.innerText = "🔇";
+        $('#audio')[0].pause();
+        this.innerText = "🔇";
     } else {
-      $('#audio')[0].play();
+        $('#audio')[0].play();
       this.innerText = "💎";
     }
     ctl = !ctl;
