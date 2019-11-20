@@ -155,7 +155,7 @@ canvas#timeProcess {
     left: 0px;
     width: 200px;
     height: 200px;
-    z-index: 2;
+    z-index: 99999;
     opacity: 1;
     cursor: default;
   }
