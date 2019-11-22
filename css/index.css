@@ -4,15 +4,6 @@
   background: #fff;
 }
 
-a:visited {
-  color: #123;
-}
-a:active {
-  color: #9a2c06;
-}
-a:hover {
-  color: #d03500;
-}
 pre:hover {
   box-shadow: 0 8px 16px rgba(0,40,160,.08), 0 8px 24px rgba(0,0,0,.08);
 }
