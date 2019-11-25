@@ -15,10 +15,10 @@ canvas#timeProcess {
 }
 
 .markdown-body a:hover>img {
-  transform: scale(2);
-  transition: all 1s ease 0s;
-  -webkit-transform: scale(2);
-  -webkit-transform: all 1s ease 0s;
+  transform: scale(2) !important;
+  transition: all 1s ease 0s !important;
+  -webkit-transform: scale(2) !important;
+  -webkit-transform: all 1s ease 0s !important;
 }
 
 @media screen and (max-width: 800px) {
