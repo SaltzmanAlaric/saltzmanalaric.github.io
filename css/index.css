@@ -54,6 +54,7 @@ canvas#timeProcess {
   }
   #post {
     text-align: justify;
+    word-break: break-all;
   }
   .loading,
   .error,
