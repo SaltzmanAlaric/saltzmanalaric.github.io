@@ -14,6 +14,10 @@ canvas#timeProcess {
   height: 110px;
 }
 
+.markdown-body img:hover {
+  transform: scale(2);
+}
+
 @media screen and (max-width: 800px) {
     .page > div {
       max-width: 100%;
