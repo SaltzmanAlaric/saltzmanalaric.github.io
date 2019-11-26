@@ -13,7 +13,9 @@ canvas#timeProcess {
   width: 110px;
   height: 110px;
 }
-
+.markdown-body a>img {
+  box-shadow: 0 8px 16px rgba(0,40,160,.08), 0 8px 24px rgba(0,0,0,.08);
+}
 .markdown-body a>img:hover {
   box-shadow: 0 0 1px gray!important;
   background: #f3f3f3!important;
