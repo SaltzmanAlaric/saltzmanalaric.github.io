@@ -15,7 +15,7 @@ canvas#timeProcess {
 }
 
 .markdown-body a>img:hover {
-  box-shadow: 0 0 2px gray!important;
+  box-shadow: 0 0 1px gray!important;
   background: #f3f3f3!important;
 }
 
