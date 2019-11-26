@@ -19,7 +19,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
       ];
       var random = Math.random();
       $(".page").css({"background": bgs[parseInt(random*bgs.length)], "backgroundSize": "100% 100%"});
-      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.9/static/"+ parseInt(random*10) +".mp3";
+      $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/static/"+ parseInt(random*10) +".mp3";
       $('#audio')[0].volume = 0.3;
   } else {
     $("#audio").remove();
@@ -27,7 +27,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
   var ctl = false;
   $('#musicBtn').click(function(){
     if(!$('#audio')[0].src.endsWith("static/zzz.mp3")) {
-        $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.9/static/zzz.mp3";
+        $('#audio')[0].src = "https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/static/zzz.mp3";
         $('.sitev span').bumpyText();
     }
       $('#audio')[0].volume = 0.3;
