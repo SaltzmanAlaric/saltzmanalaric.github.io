@@ -14,11 +14,12 @@ canvas#timeProcess {
   height: 110px;
 }
 
-.markdown-body a:hover>img {
-  transform: scale(2) !important;
+.markdown-body a>img {
   transition: all 1s ease 0s !important;
-  -webkit-transform: scale(2) !important;
-  -webkit-transform: all 1s ease 0s !important;
+}
+
+.markdown-body a>img:hover {
+  transform: scale(2) !important;
 }
 
 @media screen and (max-width: 800px) {
