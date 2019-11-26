@@ -31,7 +31,8 @@ canvas#timeProcess {
 }
 .markdown-body blockquote:before {
   content: "“";
-  display: inline;
+  display: block;
+  height: 30px;
   color: #555555;
   font-size: 4em;
   font-family: Arial, serif;
