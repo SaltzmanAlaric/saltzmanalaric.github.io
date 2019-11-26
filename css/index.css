@@ -19,7 +19,7 @@ canvas#timeProcess {
 }
 
 .markdown-body a>img:hover {
-  transform: scale(2) !important;
+  transform: scale(1.96) !important;
 }
 
 @media screen and (max-width: 800px) {
