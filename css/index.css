@@ -29,6 +29,9 @@ canvas#timeProcess {
   color: #888;
   margin: 0 0 1em;
 }
+.markdown-body code {
+  color: rgb(239, 112, 96);
+}
 .markdown-body blockquote p {
   display: inline;
 }
