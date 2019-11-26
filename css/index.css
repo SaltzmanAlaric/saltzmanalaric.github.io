@@ -29,10 +29,12 @@ canvas#timeProcess {
   color: #888;
   margin: 0 0 1em;
 }
+.markdown-body blockquote p {
+  display: inline;
+}
 .markdown-body blockquote:before {
   content: "“";
-  display: block;
-  height: 30px;
+  display: inline;
   color: #555555;
   font-size: 4em;
   font-family: Arial, serif;
