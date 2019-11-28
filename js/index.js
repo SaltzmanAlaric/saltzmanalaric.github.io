@@ -16,6 +16,8 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
         "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016221836.jpg')"
         ,
         "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191016221307.jpg')"
+        ,
+        "url('https://cdn.jsdelivr.net/gh/SaltzmanAlaric/FigureBed/20191128132319.jpg')"
       ];
       var random = Math.random();
       $(".page").css({"background": bgs[parseInt(random*bgs.length)], "backgroundSize": "100% 100%"});
