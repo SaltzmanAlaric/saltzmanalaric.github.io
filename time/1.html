@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jQuery动画特效 逐渐向下伸缩的文字特效</title>
+    <script type="text/javascript" src="js/jquery.1.4.2-min.js"></script>
+    <script type="text/javascript" src="js/jq22.js"></script>
+    <link href="css/jq22.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript">
+        var init = function(){
+                $.getJSON("js/activity.json", function (data) {
+                    var $history = $("#history");
+                    var strHtml = "";
+                    //存储数据的变量
+                    $history.empty();
+                    //清空内容
+                    $.each(data, function (i, item) {
+                        strHtml += "<div class='history-date'><ul>";
+                        if (i == 0) {
+                            strHtml += "<h2 class='first'><a href='#nogo'>" + item.year + "年</a>博客历程</h2>";
+                        } else {
+                            strHtml += "<h2 class='date02'><a href='nogo'>" + item.year + "年</a></h2>";
+                        }
+                        $.each(item, function (j, n) {
+                            strHtml += "<li class='green'><h3>"+n.time+"<span>"+item.year+"</span></h3><dl><dt>"+n.title+"<span>"+n.desc+"</span></dt></dl></li>";
+                        });//end inner-each
+                        strHtml +="</ul></div>";
+                    }); // end outer-each
+                    $history.html(strHtml);
+                    //显示处理后的数据
+                });
+            };
+        init();
+    </script>
+</head>
+<body>
+<div class="demo">
+    <div class="history" id="history"></div>
+</div>
+</body>
+</html>
