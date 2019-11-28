@@ -5,9 +5,16 @@
     <script type="text/javascript" src="js/jquery.1.4.2-min.js"></script>
     <script type="text/javascript" src="js/jq22.js"></script>
     <link href="css/jq22.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript">
+    
+</head>
+<body>
+<div class="demo">
+    <div class="history" id="history"></div>
+</div>
+<script type="text/javascript">
         var init = function(){
                 $.getJSON("js/activity.json", function (data) {
+            
                     var $history = $("#history");
                     var strHtml = "";
                     //存储数据的变量
@@ -20,8 +27,8 @@
                         } else {
                             strHtml += "<h2 class='date02'><a href='nogo'>" + item.year + "年</a></h2>";
                         }
-                        $.each(item, function (j, n) {
-                            strHtml += "<li class='green'><h3>"+n.time+"<span>"+item.year+"</span></h3><dl><dt>"+n.title+"<span>"+n.desc+"</span></dt></dl></li>";
+                        $.each(item.acts, function (j, n) {
+                            strHtml += "<li class='green'><h3>"+n.date+"<span>"+item.year+"</span></h3><dl><dt>"+n.title+"<span>"+n.desc+"</span></dt></dl></li>";
                         });//end inner-each
                         strHtml +="</ul></div>";
                     }); // end outer-each
@@ -31,10 +38,5 @@
             };
         init();
     </script>
-</head>
-<body>
-<div class="demo">
-    <div class="history" id="history"></div>
-</div>
 </body>
 </html>
