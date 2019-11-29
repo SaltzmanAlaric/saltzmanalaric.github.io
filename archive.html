@@ -13,7 +13,7 @@
     <div class="history" id="history"></div>
 </div>
 <script>
-    var fillHTML = function (data) {
+    var fillHTML = function (data) {debugger;
         var $history = $("#history");
         var strHtml = "";
         //存储数据的变量
@@ -22,9 +22,9 @@
         $.each(data, function (i, item) {
             strHtml += "<div class='history-date'><ul>";
             if (i == 0) {
-                strHtml += "<h2 class='first'><a>" + item.year + "年</a>博客历程</h2>";
+                strHtml += "<h2 class='first'><a>" + item.year + "年</a>"+getLabelCnt(item.labelMap)+"</h2>";
             } else {
-                strHtml += "<h2 class='date02'><a>" + item.year + "年</a></h2>";
+                strHtml += "<h2 class='date02'><a>" + item.year + "年</a>"+getLabelCnt(item.labelMap)+"</h2>";
             }
             $.each(item.acts, function (j, n) {
                 strHtml += "<li class='" + ((i==j&&i==0) || n.isBig ? "green" : "") + "'><h3>" + n.date + "<span>" + item.year + "</span></h3><dl><dt>" + n.title + "<a target='_blank' href='"+n.href+"'>⇲</a><span>" + n.desc + "</span></dt></dl></li>";
@@ -76,10 +76,12 @@
                     act.href = "https://saltzmanalaric.github.io/#/posts/"+item.number;
                     act.title = item.title;
                     var labelNames = [];
+                    var labelMap = {};
                     for (var j = 0; j < item.labels.length; j++) {
                         labelNames.push(item.labels[j].name);
+                        labelMap[item.labels[j].name]=1;
                     }
-                    act.desc = labelNames.join(",");
+                    act.desc = labelNames.join(" | ");
                     var createAt = new Date(item.created_at);
                     var yy = createAt.getFullYear();
                     var mm = createAt.getMonth() + 1
@@ -88,15 +90,25 @@
 
                     var arc = {year: yy, acts: []};
                     if (data.length == 0) {
+                        arc.labelMap = labelMap;
                         arc.acts.push(act);
                         data.push(arc);
                     } else if (data[data.length - 1].year == yy) {
+                        for (var m in labelMap) {
+                            if (data[data.length - 1].labelMap[m]) {
+                                data[data.length - 1].labelMap[m] += labelMap[m];
+                            } else {
+                                data[data.length - 1].labelMap[m]= labelMap[m];
+                            }
+                        }
                         data[data.length - 1].acts.push(act);
                     } else {
+                        arc.labelMap = labelMap;
                         arc.acts.push(act);
                         data.push(arc);
                     }
                 });
+
                 fillHTML(data);
             },
             complete: function () {
@@ -106,6 +118,14 @@
         });
     };
     init();
+
+    var getLabelCnt = function(labelMap) {
+        var desc = "";
+        for(var key in labelMap){//遍历json对象的每个key/value对,p为key
+            desc += key+"(" + labelMap[key] + "篇) ";
+        }
+        return desc;
+    }
 
 </script>
 </body>
