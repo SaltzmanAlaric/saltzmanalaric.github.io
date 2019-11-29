@@ -1,0 +1,112 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>博客历程</title>
+    <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link href="css/jq22.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="history" id="history"></div>
+</div>
+<script>
+    var fillHTML = function (data) {
+        var $history = $("#history");
+        var strHtml = "";
+        //存储数据的变量
+        $history.empty();
+        //清空内容
+        $.each(data, function (i, item) {
+            strHtml += "<div class='history-date'><ul>";
+            if (i == 0) {
+                strHtml += "<h2 class='first'><a>" + item.year + "年</a>博客历程</h2>";
+            } else {
+                strHtml += "<h2 class='date02'><a>" + item.year + "年</a></h2>";
+            }
+            $.each(item.acts, function (j, n) {
+                strHtml += "<li class='" + ((i==j&&i==0) || n.isBig ? "green" : "") + "'><h3>" + n.date + "<span>" + item.year + "</span></h3><dl><dt>" + n.title + "<a target='_blank' href='"+n.href+"'>⇲</a><span>" + n.desc + "</span></dt></dl></li>";
+            });//end inner-each
+            strHtml += "</ul></div>";
+        }); // end outer-each
+        $history.html(strHtml);
+        //显示处理后的数据
+    }
+
+    function systole() {
+        if (!$(".history").length) {
+            return;
+        }
+        var $warpEle = $(".history-date"), $targetA = $warpEle.find("h2 a,ul li dl dt a"), parentH, eleTop = [];
+        parentH = $warpEle.parent().height();
+        $warpEle.parent().css({"height": 59});
+        setTimeout(function () {
+            $warpEle.find("ul").children(":not('h2:first')").each(function (idx) {
+                eleTop.push($(this).position().top);
+                $(this).css({"margin-top": -eleTop[idx]}).children().hide();
+            }).animate({"margin-top": 0}, 1600).children().fadeIn();
+            $warpEle.parent().animate({"height": parentH}, 2600);
+            $warpEle.find("ul").children(":not('h2:first')").addClass("bounceInDown").css({
+                "-webkit-animation-duration": "2s",
+                "-webkit-animation-delay": "0",
+                "-webkit-animation-timing-function": "ease",
+                "-webkit-animation-fill-mode": "both"
+            }).end().children("h2").css({"position": "relative"});
+        }, 600);
+        $targetA.click(function () {
+            $(this).parent().css({"position": "relative"});
+            $(this).parent().siblings().slideToggle();
+            $warpEle.parent().removeAttr("style");
+            return false;
+        });
+    };
+
+    var init = function () {
+        $.ajax({
+            url: "https://api.github.com/repos/saltzmanalaric/Mirror-blog/issues?page=1&per_page=10000",
+            beforeSend: function () {
+                $("#history").after('<img id="load" style="width: 100%;" src="static/images/wait.gif" />');
+            },
+            success: function (res) {
+                var data = [];
+                $.each(res, function (i, item) {
+                    var act = {};
+                    act.href = item.number;
+                    act.title = item.title;
+                    var labelNames = [];
+                    for (var j = 0; j < item.labels.length; j++) {
+                        labelNames.push(item.labels[j].name);
+                    }
+                    act.desc = labelNames.join(",");
+                    var createAt = new Date(item.created_at);
+                    var yy = createAt.getFullYear();
+                    var mm = createAt.getMonth() + 1
+                    var dd = createAt.getDate();
+                    act.date = ("0" + mm).slice(-2) + "." + ("0" + dd).slice(-2);
+
+                    var arc = {year: yy, acts: []};
+                    if (data.length == 0) {
+                        arc.acts.push(act);
+                        data.push(arc);
+                    } else if (data[data.length - 1].year == yy) {
+                        data[data.length - 1].acts.push(act);
+                    } else {
+                        arc.acts.push(act);
+                        data.push(arc);
+                    }
+                });
+                fillHTML(data);
+            },
+            complete: function () {
+                $('#load').remove();
+                systole();
+            }
+        });
+    };
+    init();
+
+</script>
+</body>
+</html>
