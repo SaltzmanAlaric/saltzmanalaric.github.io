@@ -12,7 +12,29 @@
 <div class="container">
     <div class="history" id="history"></div>
 </div>
+<a href="javascript:;" id="backTop" title="回到顶部">
+</a>
 <script>
+    $(document).ready(function() {
+        $("#backTop").hide();
+        $(function() {
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $("#backTop").fadeIn(200);
+                } else {
+                    $("#backTop").fadeOut(200);
+                }
+            });
+            $("#backTop").click(function() {
+                $('body,html').animate({
+                        scrollTop: 0
+                    },
+                    500);
+                return false;
+            });
+        });
+    });
+
     var fillHTML = function (data) {debugger;
         var $history = $("#history");
         var strHtml = "";
