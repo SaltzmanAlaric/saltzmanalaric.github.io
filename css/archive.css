@@ -2,31 +2,31 @@
 * {
     margin: 0;
     padding: 0;
-    list-style-type: none
+    list-style-type: none;
 }
 
 a, img {
-    border: 0
+    border: 0;
 }
 
 body {
-    font: 12px/180% Arial, Helvetica, sans-serif, "新宋体"
+    font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
 }
 
 .container {
     width: 960px;
-    margin: 60px auto 0
+    margin: 60px auto 0;
 }
 
 .history {
     background: url(../static/images/line04.gif) repeat-y 187px 0;
     overflow: hidden;
-    position: relative
+    position: relative;
 }
 
 .history-date {
     overflow: hidden;
-    position: relative
+    position: relative;
 }
 
 .history-date h2 {
@@ -36,7 +36,7 @@ body {
     font-family: 微软雅黑;
     font-weight: 400;
     padding-left: 45px;
-    margin-bottom: 74px
+    margin-bottom: 74px;
 }
 
 .history-date h2.first {
@@ -44,7 +44,7 @@ body {
     left: 0;
     top: 0;
     width: 935px;
-    z-index: 99
+    z-index: 99;
 }
 
 .history-date h2 a {
@@ -54,29 +54,30 @@ body {
     zoom: 1;
     background: url(../static/images/icon08.gif) no-repeat right 50%;
     padding-right: 17px;
-    margin: 21px 97px 0 0
+    margin: 21px 97px 0 0;
 }
 
 .history-date h2 a:hover {
-    text-decoration: none
+    text-decoration: none;
+    cursor: hand;
 }
 
 .history-date h2 img {
-    vertical-align: -5px
+    vertical-align: -5px;
 }
 
 .history-date h2.date02 {
-    background: 0 0
+    background: 0 0;
 }
 
 .history-date ul li {
     background: url(../static/images/icon07.gif) no-repeat 180px 0;
     padding-bottom: 50px;
-    zoom: 1
+    zoom: 1;
 }
 
 .history-date ul li.last {
-    padding-bottom: 0
+    padding-bottom: 0;
 }
 
 .history-date ul li:after {
@@ -84,7 +85,7 @@ body {
     display: block;
     height: 0;
     clear: both;
-    visibility: hidden
+    visibility: hidden;
 }
 
 .history-date ul li h3 {
@@ -93,48 +94,48 @@ body {
     text-align: right;
     padding-right: 19px;
     color: #c3c3c3;
-    font: normal 18px/16px Arial
+    font: normal 18px/16px Arial;
 }
 
 .history-date ul li h3 span {
     display: block;
     color: #d0d0d0;
-    font-size: 12px
+    font-size: 12px;
 }
 
 .history-date ul li dl {
     float: left;
     padding-left: 41px;
     margin-top: -5px;
-    font-family: 微软雅黑
+    font-family: 微软雅黑;
 }
 
 .history-date ul li dl dt {
     font: 20px/22px 微软雅黑;
-    color: #737373
+    color: #737373;
 }
 
 .history-date ul li dl dt span {
     display: block;
     color: #787878;
-    font-size: 12px
+    font-size: 12px;
 }
 
 .history-date ul li.green h3 {
-    color: #1db702
+    color: #1db702;
 }
 
 .history-date ul li.green h3 span {
-    color: #a8dda3
+    color: #a8dda3;
 }
 
 .history-date ul li.green dl {
-    margin-top: -8px
+    padding-top: 2px;
 }
 
 .history-date ul li.green dl dt {
     font-size: 30px;
-    line-height: 30px
+    line-height: 30px;
 }
 
 .history-date ul li.green dl dt a {
@@ -149,18 +150,18 @@ body {
 
 .history-date ul li.green dl dd {
     padding-top: 20px;
-    display: none
+    display: none;
 }
 
 .history-date ul li.green dl dd img {
-    float: left
+    float: left;
 }
 
 .history-date ul li.green dl dd p {
     overflow: hidden;
     zoom: 1;
     line-height: 21px;
-    color: #787878
+    color: #787878;
 }
 
 .history-date h2.first .more-history {
@@ -170,16 +171,16 @@ body {
 }
 
 .history-date h2.first .more-history:hover {
-    text-decoration: underline
+    text-decoration: underline;
 }
 
 * body .history-date ul li dl dt {
     _font-size: 12px !important;
-    _font-weight: bold
+    _font-weight: bold;
 }
 
 * body .history-date ul li dl dt span {
-    _font-weight: normal !important
+    _font-weight: normal !important;
 }
 
 .history-date ul li dl dt a{

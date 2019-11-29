@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <title>博客历程</title>
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
-    <link href="css/jq22.css" rel="stylesheet"/>
+    <link href="css/archive.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container">
@@ -39,7 +39,7 @@
         if (!$(".history").length) {
             return;
         }
-        var $warpEle = $(".history-date"), $targetA = $warpEle.find("h2 a,ul li dl dt a"), parentH, eleTop = [];
+        var $warpEle = $(".history-date"), $targetA = $warpEle.find("h2 a"), parentH, eleTop = [];
         parentH = $warpEle.parent().height();
         $warpEle.parent().css({"height": 59});
         setTimeout(function () {
@@ -73,7 +73,7 @@
                 var data = [];
                 $.each(res, function (i, item) {
                     var act = {};
-                    act.href = item.number;
+                    act.href = "https://saltzmanalaric.github.io/#/posts/"+item.number;
                     act.title = item.title;
                     var labelNames = [];
                     for (var j = 0; j < item.labels.length; j++) {
