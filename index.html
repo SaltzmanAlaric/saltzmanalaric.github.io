@@ -45,7 +45,7 @@ var fmtDate = function () {
   var now = new Date();
   var month = now.getMonth()+1;
   var date = now.getDate();
-  var day = ["一","二","三","四","五","六","日"][now.getDay()];
+  var day = ["日","一","二","三","四","五","六"][now.getDay()];
   return now.getFullYear() + "年" + ("0"+month).slice(-2) + "月" + ("0"+date).slice(-2) + "日（星期" + day + "）";
 };
 

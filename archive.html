@@ -48,7 +48,7 @@
                 strHtml += "<h2 class='date02'><a>" + item.year + "年</a>"+getLabelCnt(item.labelMap)+"</h2>";
             }
             $.each(item.acts, function (j, n) {
-                strHtml += "<li class='" + (j==0 || n.isBig ? "green" : "") + "'><h3>" + n.date + "<span>" + item.year + "</span></h3><dl><dt>" + n.title + "<a target='_blank' href='"+n.href+"'>⇲</a><span>" + n.desc + "</span></dt></dl></li>";
+                strHtml += "<li class='" + ((j==0 || n.isBig) ? "green" : "") + "'><h3>" + n.date + "<span>" + item.year + "</span></h3><dl><dt>" + n.title + "<a target='_blank' href='"+n.href+"'>⇲</a><span>" + n.desc + "</span></dt></dl></li>";
             });//end inner-each
             strHtml += "</ul></div>";
         }); // end outer-each
