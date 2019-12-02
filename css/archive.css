@@ -17,7 +17,10 @@ body {
     width: 960px;
     margin: 60px auto 0;
 }
-
+::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+}
 .history {
     background: url(../static/images/line04.gif) repeat-y 187px 0;
     overflow: hidden;
