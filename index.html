@@ -9,10 +9,10 @@
     <link rel="shortcut icon" href="favicon.ico"/>
     <title> loading... </title>
     <link rel="stylesheet" href="css/index.css">
-    <script src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/L2Dwidget.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/jquery.bumpytext.packed.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/easying.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/L2Dwidget.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/jquery.bumpytext.packed.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/easying.js"></script>
 
     <script>
         window.config = {
@@ -167,7 +167,7 @@
                 ctx.stroke();
             }
 
-            const loadCanvas = function(now) {
+            const loadCanvas = function (now) {
                 timer = setInterval(function () {
                     if (t > now) {
                         draw(now);//最后一次绘制
@@ -179,7 +179,7 @@
                 }, 20);
             };
 
-            let t = 0,timer = null;
+            let t = 0, timer = null;
             loadCanvas(spendRate());
             timer = null;
         };
@@ -204,8 +204,8 @@
     <div></div>
 </div>
 <audio id="audio" controls="controls" autoplay="autoplay" hidden="hidden"></audio>
-<script src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/index.04eb6053.js"></script>
-<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/index.04eb6053.js"></script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="sitev">
     <div id="musicBtn">💎</div>
     <span id="busuanzi_value_site_pv"></span>次/<span id="busuanzi_value_site_uv"></span>人
