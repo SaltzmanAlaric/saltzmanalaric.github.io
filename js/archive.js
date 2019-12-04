@@ -27,28 +27,28 @@ const fillHTML = function (data) {
         strHtml += "<h2 class='" + (i === 0 ? "first" : "date02") + "'><a>" + item.year + "年</a>" + getLabelCnt(item.labelMap) + "</h2>";
         $.each(item.acts, function (j, n) {
             strHtml += "<li class='" + ((j === 0 || n.isBig) ? "green" : "") + "'><h3>" + n.date + "<span>" + item.year + "</span></h3><dl><dt>" + n.title + "<a target='_blank' href='" + n.href + "'>⇲</a><span>" + n.desc + "</span></dt></dl></li>";
-        });//end inner-each
+        }); //end inner-each
         strHtml += "</ul></div>";
     }); // end outer-each
     $history.html(strHtml);
 };
 
-const systole = function() {
+const systole = function () {
     if (!$(".history").length) {
         return;
     }
-    let $warpEle = $(".history-date");
-    let $targetA = $warpEle.find("h2 a");
-    let parentH = $warpEle.parent().height();
-    $warpEle.parent().css({"height": 59});
+    let $wrapEle = $(".history-date");
+    let $targetA = $wrapEle.find("h2 a");
+    let parentH = $wrapEle.parent().height();
+    $wrapEle.parent().css({"height": 59});
     let eleTop = [];
     setTimeout(function () {
-        $warpEle.find("ul").children(":not('h2:first')").each(function (idx) {
+        $wrapEle.find("ul").children(":not('h2:first')").each(function (idx) {
             eleTop.push($(this).position().top);
             $(this).css({"margin-top": -eleTop[idx]}).children().hide();
         }).animate({"margin-top": 0}, 1600).children().fadeIn();
-        $warpEle.parent().animate({"height": parentH}, 2600);
-        $warpEle.find("ul").children(":not('h2:first')").addClass("bounceInDown").css({
+        $wrapEle.parent().animate({"height": parentH}, 2600);
+        $wrapEle.find("ul").children(":not('h2:first')").addClass("bounceInDown").css({
             "-webkit-animation-duration": "2s",
             "-webkit-animation-delay": "0",
             "-webkit-animation-timing-function": "ease",
@@ -58,7 +58,7 @@ const systole = function() {
     $targetA.click(function () {
         $(this).parent().css({"position": "relative"});
         $(this).parent().siblings().slideToggle();
-        $warpEle.parent().removeAttr("style");
+        $wrapEle.parent().removeAttr("style");
         return false;
     });
 };
@@ -73,7 +73,7 @@ const init = function () {
                 if (!labels || !labels.length) {
                     return true;
                 }
-                let labelNames = [],labelMap = {},act = {};
+                let labelNames = [], labelMap = {}, act = {};
                 for (let label of labels) {
                     labelNames.push(label.name);
                     labelMap[label.name] = 1;
