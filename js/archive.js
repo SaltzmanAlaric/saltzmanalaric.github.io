@@ -111,7 +111,6 @@ const init = function () {
                     data.push(arc);
                 }
             });
-            console.log(JSON.stringify(res));
             fillHTML(data);
         },
         complete: function () {
