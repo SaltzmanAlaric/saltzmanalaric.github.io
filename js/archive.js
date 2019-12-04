@@ -65,7 +65,9 @@ const systole = function () {
 
 const init = function () {
     $.ajax({
-        url: "https://api.github.com/repos/saltzmanalaric/Mirror-blog/issues?page=1&per_page=10000",
+        url: "../archives.json",
+        type: "GET",
+        dataType: "json",
         success: function (res) {
             let data = [];
             $.each(res, function (i, item) {
