@@ -13,7 +13,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/jquery.bumpytext.packed.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.10/lib/easying.js"></script>
-
     <script>
         window.config = {
             organization: false,
@@ -77,7 +76,7 @@
                 fetch(url).then(function (res) {
                     if (res.ok) {
                         res.json().then(function (arr) {
-                            var label_text = "";
+                            let label_text = "";
                             for (let i in arr) {
                                 label_text += '<a href="?label=' + arr[i].name + '">#' + arr[i].name + '</a>';
                             }
@@ -139,7 +138,7 @@
         };
 
         // 一年进度条
-        var timeBar = function () {
+        const timeBar = function () {
             let c = document.getElementById("timeProcess");
             let ctx = c.getContext("2d");
             let circ = Math.PI * 2;
