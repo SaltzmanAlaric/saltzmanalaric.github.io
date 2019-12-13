@@ -75,7 +75,7 @@
             let className = $("html").attr("class");
             let ele = document.getElementById("labels");
             if (!ele.innerHTML) {
-                if (window.config.labels === -1) {
+                if (!window.config.labels) {
                     $("html").attr('class', 'loading');
                 }
                 fetch(url).then(function (res) {
@@ -88,9 +88,8 @@
                             ele.innerHTML = label_text;
                         })
                     }
-                }).then(function (data) {
-                    $("html").attr('class', className);
                 });
+                $("html").attr('class', className);
                 window.config.labels = 1;
             } else {
                 ele.style.display = window.config.labels === 1 ? "none" : "";
