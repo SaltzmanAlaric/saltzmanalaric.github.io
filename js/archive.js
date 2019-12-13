@@ -57,13 +57,13 @@ const systole = function () {
     }, 600);
     $targetA.click(function () {
         $(this).parent().css({"position": "relative"});
-        /*var bgImage = $(this).css("background-image");
-        if (bgImage.endsWith("icon08.gif')")) {
+        var bgImage = $(this).css("background-image");
+        if (bgImage.endsWith('icon08.gif")')) {
             bgImage = bgImage.replace("icon08.gif", "icon09.gif");
         } else {
             bgImage = bgImage.replace("icon09.gif", "icon08.gif");
         }
-        $(this).css("background-image", bgImage);*/
+        $(this).css("background-image", bgImage);
         $(this).parent().siblings().slideToggle();
         $wrapEle.parent().removeAttr("style");
         return false;
