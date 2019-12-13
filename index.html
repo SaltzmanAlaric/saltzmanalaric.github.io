@@ -77,9 +77,12 @@
             if (!ele.innerHTML) {
                 if (!window.config.labelList) {
                     $("html").attr('class', 'loading');
-                    fetch(url)
-                        .then(res => res.json())
-                        .then(data => window.config.labelList = data);
+                    try{
+                        let response = await fetch(url);
+                        window.config.labelList = await response.json();
+                    } catch(e){
+                        console.log("error")
+                    }
                     $("html").attr('class', className);
                 }
                 let label_text = "";
