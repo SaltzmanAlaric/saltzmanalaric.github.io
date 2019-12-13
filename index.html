@@ -72,6 +72,10 @@
         };
 
         const openLabels = function (url) {
+            let className = $(".html").attr("class");
+            if (className.search("loading") === -1) {
+                $("html").attr('class', 'loading');
+            }
             let ele = document.getElementById("labels");
             if (!ele.innerHTML) {
                 fetch(url).then(function (res) {
@@ -84,6 +88,7 @@
                             ele.innerHTML = label_text;
                         })
                     }
+                    $("html").attr('class', className);
                 });
                 window.config.labels = 1;
             } else {
