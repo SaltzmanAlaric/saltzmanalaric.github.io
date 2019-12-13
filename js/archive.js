@@ -26,7 +26,7 @@ const fillHTML = function (data) {
         strHtml += "<div class='history-date'><ul>";
         strHtml += "<h2 class='" + (i === 0 ? "first" : "date02") + "'><a>" + item.year + "年</a>" + getLabelCnt(item.labelMap) + "</h2>";
         $.each(item.acts, function (j, n) {
-            strHtml += "<li class='" + ((j === 0 || n.isBig) ? "green" : "") + "'><h3>" + n.date + "<span>" + item.year + "</span></h3><dl><dt>" + n.title + "<a target='_blank' href='" + n.href + "'>⇲</a><span>" + n.desc + "</span></dt></dl></li>";
+            strHtml += "<li class='" + ((j === 0 || n.isBig) ? "green" : "") + "'><h3>" + n.date + "<span>" + item.year + "</span></h3><dl><dt>" + (i === 0 ? "<span style='display: inline-block;vertical-align: super;color:#f00;font-size:10px;transform: rotate(-30deg);'>new</span>" : "") + n.title + "<a target='_blank' href='" + n.href + "'>⇲</a><span>" + n.desc + "</span></dt></dl></li>";
         }); //end inner-each
         strHtml += "</ul></div>";
     }); // end outer-each
