@@ -75,8 +75,6 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
      var currKey = 0;
      if (event.key !== undefined) {
          currKey = event.key;
-     } else if (event.keyIdentifier !== undefined) {
-         currKey = event.keyIdentifier;
      } else if (event.keyCode !== undefined) {
          currKey = event.keyCode;
      } else if (event.which !== undefined) {
@@ -84,7 +82,7 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
      }else if (event.charCode !== undefined) {
          currKey = event.charCode;
      }
-     if (currKey === 123) {
+     if (currKey === 'F12' || currKey === 123) {
          window.event.cancelBubble = true;
          window.event.returnValue = false;
      }
