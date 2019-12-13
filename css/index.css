@@ -21,7 +21,7 @@ canvas#timeProcess {
 .markdown-body blockquote {
   background: rgba(0, 0, 0, 0.05);
   font-style: normal;
-  padding: 10px;
+  padding: 0 1em 1em!important;
   position: relative;
   text-indent: 0;
   border: none;
