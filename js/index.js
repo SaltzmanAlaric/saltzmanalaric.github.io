@@ -68,3 +68,31 @@ a_idx = parseInt(Math.random()*a.length);var x = e.pageX,y = e.pageY;$i.css({"z-
      }
  }
  //document.oncopy = addLink;
+
+ //禁止f12
+ document.onkeydown = function (e){
+     var event = e||window.event;
+     var currKey = 0;
+     if (event.key !== undefined) {
+         currKey = event.key;
+     } else if (event.keyIdentifier !== undefined) {
+         currKey = event.keyIdentifier;
+     } else if (event.keyCode !== undefined) {
+         currKey = event.keyCode;
+     } else if (event.which !== undefined) {
+         currKey = event.which;
+     }else if (event.charCode !== undefined) {
+         currKey = event.charCode;
+     }
+     if (currKey === 123) {
+         window.event.cancelBubble = true;
+         window.event.returnValue = false;
+     }
+ };
+
+ //阻止鼠标右键事件
+ $(document).ready(function(){
+     $(document).bind("contextmenu",function(e){
+         return false;
+     });
+ });
