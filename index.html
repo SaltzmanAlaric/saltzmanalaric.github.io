@@ -75,9 +75,7 @@
             let className = $("html").attr("class");
             let ele = document.getElementById("labels");
             if (!ele.innerHTML) {
-                if (!window.config.labels || window.config.labels === -1) {
-                    $("html").attr('class', 'loading');
-                }
+                $("html").attr('class', 'loading');
                 fetch(url)
                     .then(res => res.json())
                     .then(data => {
@@ -85,6 +83,7 @@
                         for(let i = 0, len = data.length; i < len; i++) {
                             label_text += '<a href="?label=' + data[i].name + '">#' + data[i].name + '</a>';
                         }
+                        window.config.labelList = data;
                         $("html").attr('class', className);
                         ele.innerHTML = label_text;
                     })
