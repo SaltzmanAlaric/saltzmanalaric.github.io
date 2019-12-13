@@ -75,7 +75,7 @@
             let className = $("html").attr("class");
             let ele = document.getElementById("labels");
             if (!ele.innerHTML) {
-                if (!window.config.labels) {
+                if (!window.config.labels || window.config.labels === -1) {
                     $("html").attr('class', 'loading');
                 }
                 fetch(url)
