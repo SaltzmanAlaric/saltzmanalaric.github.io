@@ -75,21 +75,21 @@
             let className = $("html").attr("class");
             let ele = document.getElementById("labels");
             if (!ele.innerHTML) {
-                $("html").attr('class', 'loading');
-                fetch(url)
-                    .then(res => res.json())
-                    .then(data => {
-                        let label_text = "";
-                        for(let i = 0, len = data.length; i < len; i++) {
-                            label_text += '<a href="?label=' + data[i].name + '">#' + data[i].name + '</a>';
-                        }
-                        window.config.labelList = data;
-                        $("html").attr('class', className);
-                        ele.innerHTML = label_text;
-                    })
-                    .catch(e => $("html").attr('class', className));
+                if (!window.config.labelList) {
+                    $("html").attr('class', 'loading');
+                    fetch(url)
+                        .then(res => res.json())
+                        .then(data => window.config.labelList = data);
+                    $("html").attr('class', className);
+                }
+                let label_text = "";
+                for(let i = 0, len = data.length; i < len; i++) {
+                    label_text += '<a href="?label=' + data[i].name + '">#' + data[i].name + '</a>';
+                }
+                ele.innerHTML = label_text;
                 window.config.labels = 1;
             } else {
+
                 ele.style.display = window.config.labels === 1 ? "none" : "";
                 window.config.labels = -window.config.labels;
             }
