@@ -73,11 +73,11 @@
 
         const openLabels = function (url) {
             let className = $("html").attr("class");
-            if (className.search("loading") === -1) {
-                $("html").attr('class', 'loading');
-            }
             let ele = document.getElementById("labels");
             if (!ele.innerHTML) {
+                if (window.config.labels === -1) {
+                    $("html").attr('class', 'loading');
+                }
                 fetch(url).then(function (res) {
                     if (res.ok) {
                         res.json().then(function (arr) {
@@ -88,6 +88,7 @@
                             ele.innerHTML = label_text;
                         })
                     }
+                }).then(function (data) {
                     $("html").attr('class', className);
                 });
                 window.config.labels = 1;
