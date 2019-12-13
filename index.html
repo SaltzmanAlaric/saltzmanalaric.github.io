@@ -83,8 +83,8 @@
                     $("html").attr('class', className);
                 }
                 let label_text = "";
-                for(let i = 0, len = data.length; i < len; i++) {
-                    label_text += '<a href="?label=' + data[i].name + '">#' + data[i].name + '</a>';
+                for(let i = 0, len = window.config.labelList.length; i < len; i++) {
+                    label_text += '<a href="?label=' + window.config.labelList[i].name + '">#' + window.config.labelList[i].name + '</a>';
                 }
                 ele.innerHTML = label_text;
                 window.config.labels = 1;
