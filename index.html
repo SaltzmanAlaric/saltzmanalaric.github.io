@@ -173,7 +173,8 @@
             }
 
             const loadCanvas = function (now) {
-                timer = setInterval(function () {
+                draw(now);//最后一次绘制
+                /*timer = setInterval(function () {
                     if (t > now) {
                         draw(now);//最后一次绘制
                         clearInterval(timer);
@@ -181,7 +182,7 @@
                         draw(t);
                         t += 0.01;
                     }
-                }, 20);
+                }, 20);*/
             };
 
             let t = 0, timer = null;
