@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 const fillHTML = function (data) {
     let $history = $("#history");
-    let strHtml = "";
+    let strHtml = "<span style='display: none;background-image: url(../static/images/icon09.gif)'></span>";
     $history.empty();
     $.each(data, function (i, item) {
         strHtml += "<div class='history-date'><ul>";
