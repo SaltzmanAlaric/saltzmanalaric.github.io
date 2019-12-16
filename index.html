@@ -80,6 +80,7 @@
                     fetch(url)
                         .then(res => res.json())
                         .then(data => {
+                            window.config.label_text = "";
                             for(let i = 0, len = data.length; i < len; i++) {
                                 window.config.label_text += '<a href="?label=' + data[i].name + '">#' + data[i].name + '</a>';
                             }
@@ -173,18 +174,21 @@
             }
 
             const loadCanvas = function (now) {
-                draw(now);//最后一次绘制
-                /*timer = setInterval(function () {
-                    if (t > now) {
-                        draw(now);//最后一次绘制
-                        clearInterval(timer);
-                    } else {
-                        draw(t);
-                        t += 0.01;
-                    }
-                }, 20);*/
+                if (window.config.timeBar === undefined) {
+                    timer = setInterval(function () {
+                        if (t > now) {
+                            draw(now);//最后一次绘制
+                            clearInterval(timer);
+                        } else {
+                            draw(t);
+                            t += 0.01;
+                        }
+                    }, 20);
+                } else {
+                    window.config.timeBar = true;
+                    draw(now);
+                }
             };
-
             let t = 0, timer = null;
             loadCanvas(spendRate());
             timer = null;
