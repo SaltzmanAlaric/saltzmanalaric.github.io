@@ -175,6 +175,7 @@
 
             const loadCanvas = function (now) {
                 if (window.config.timeBar === undefined) {
+                    let t = 0, timer = null;
                     timer = setInterval(function () {
                         if (t > now) {
                             draw(now);//最后一次绘制
@@ -184,14 +185,13 @@
                             t += 0.01;
                         }
                     }, 20);
-                } else {
                     window.config.timeBar = true;
+                    timer= null;
+                } else {
                     draw(now);
                 }
             };
-            let t = 0, timer = null;
             loadCanvas(spendRate());
-            timer = null;
         };
 
     </script>
