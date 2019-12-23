@@ -39,7 +39,8 @@ const systole = function () {
     }
     let $wrapEle = $(".history-date");
     let $targetA = $wrapEle.find("h2 a");
-    let parentH = $wrapEle.parent().height()+100;
+    let n = $wrapEle.find("ul li").length;
+    let parentH = $wrapEle.parent().height() + 2.5*n;
     $wrapEle.parent().css({"height": 59});
     let eleTop = [];
     setTimeout(function () {
@@ -71,8 +72,8 @@ const systole = function () {
 };
 
 const init = function () {
-    $.ajax({
-        url: "https://api.github.com/repos/saltzmanalaric/Mirror-blog/issues?page=1&per_page=10000",
+   $.ajax({
+        url: "https://api.github.com/repos/saltzmanalaric/Mirror-blog/issues?page=1&per_page=10000&sort=created-desc",
         type: "GET",
         dataType: "json",
         success: function (res) {
