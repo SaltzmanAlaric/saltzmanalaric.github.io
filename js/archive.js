@@ -39,8 +39,7 @@ const systole = function () {
     }
     let $wrapEle = $(".history-date");
     let $targetA = $wrapEle.find("h2 a");
-    let n = $wrapEle.find("ul li").length;
-    let parentH = $wrapEle.parent().height() + 2.5*n;
+    let parentH = $wrapEle.parent().height() + 127;
     $wrapEle.parent().css({"height": 59});
     let eleTop = [];
     setTimeout(function () {
