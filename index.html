@@ -38,7 +38,7 @@
             createYear: 2019,
         };
 
-        const siblings = function() {
+        const siblings = function() {console.log(1);
             let jump = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'></div>";
             let currHash = parseInt(document.location.hash.match(/[0-9]+/g)[0]);
             let pre = currHash + 1;
@@ -46,7 +46,7 @@
             const ignoresArr = window.config.ignores.split(',');
             if (ignoresArr && ignoresArr.length > 0) {
                 let n = currHash;
-                if (ignoresArr.includes(n)) {
+                if (ignoresArr.includes(n)) {console.log(2);
                     if ($(".page-current div#siblings").length === 0) {
                         $(".page-current div.labels").after(jump + window.config.danmu);
                     }
@@ -78,12 +78,12 @@
                         // hash从1开始
                         if (next > 0) {
                             jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next) + "'>下一篇 ▶</a>";
-                        }
+                        }console.log(3);
                         $(".page-current div.labels").after(jump + window.config.danmu);
                     }
                 });
             }
-            if ($(".page-current div#siblings").length === 0) {
+            if ($(".page-current div#siblings").length === 0) {console.log(4);
                 $(".page-current div.labels").after(jump + window.config.danmu);
             }
             return '';
