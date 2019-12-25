@@ -129,7 +129,7 @@ $(document).ready(function () {
             runTime %= 3600;
             let minute = Math.floor(runTime / 60);
             let second = Math.floor(runTime % 60);
-            $('.page-current #yx').html('该网站已运行：' + year + '年' + month + '月' + day + '日' + hour + '时' + minute + '分' + second + '秒');
+            $('.page-current #yx').html('该网站已运行：' + ('0'+year).slice(-2) + '年' + ('0'+month).slice(-2) + '月' + ('0'+day).slice(-2) + '日' + ('0'+hour).slice(-2) + '时' + ('0'+minute).slice(-2) + '分' + ('0'+second).slice(-2) + '秒');
         }
     }, 1000);
 });
