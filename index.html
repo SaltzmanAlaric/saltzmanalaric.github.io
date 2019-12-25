@@ -47,7 +47,7 @@
             if (ignoresArr && ignoresArr.length > 0) {
                 let n = currHash;
                 if (ignoresArr.includes(n)) {
-                    return jump;
+                    return jump + window.config.danmu;
                 }
                 while(ignoresArr.includes((--n)+''));
                 next = n;
@@ -76,11 +76,11 @@
                         if (next > 0) {
                             jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next) + "'>下一篇 ▶</a>";
                         }
-                        $(".page-current div.labels").after(jump);
+                        $(".page-current div.labels").after(jump + window.config.danmu);
                     }
                 });
             }
-            return jump;
+            return jump + window.config.danmu;
         };
 
         console.log('%c ' + window.config.title + ' ' + window.config.user,
