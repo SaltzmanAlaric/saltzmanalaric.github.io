@@ -39,7 +39,7 @@
         };
 
         const siblings = function() {
-            let jump = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'></div>";
+            let hr = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'></div>";
             let currHash = parseInt(document.location.hash.match(/[0-9]+/g)[0]);
             let pre = currHash + 1;
             let next = currHash - 1;
@@ -47,7 +47,7 @@
             if (ignoresArr && ignoresArr.length > 0) {
                 let n = currHash;
                 if (ignoresArr.includes(n)) {
-                    return jump;
+                    return hr;
                 }
                 while(ignoresArr.includes((--n)+''));
                 next = n;
@@ -56,6 +56,7 @@
                 pre = n;
             }
 
+            let jump = '';
             let href = '';
             let desc = '';
             if (window.config.max) {
@@ -102,7 +103,7 @@
                     }
                 });
             }
-            return jump;
+            return hr + jump;
         };
 
         console.log('%c ' + window.config.title + ' ' + window.config.user,
