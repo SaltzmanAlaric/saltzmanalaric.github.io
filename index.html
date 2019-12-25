@@ -38,8 +38,8 @@
             createYear: 2019,
         };
 
-        const siblings = function(edges, node) {
-            if (node !== edges[edges.length - 1]) {
+        const siblings = function(edges, edge) {
+            if (edge !== edges[edges.length - 1]) {
                 return '';
             }
             let jump = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'>";
