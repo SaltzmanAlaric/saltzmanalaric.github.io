@@ -40,6 +40,31 @@
 
         const siblings = function() {console.log(1);
             let jump = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'></div>";
+            let currHash = parseInt(document.location.hash.match(/[0-9]+/g)[0]);
+            let pre = currHash + 1;
+            let next = currHash - 1;
+            const ignoresArr = window.config.ignores.split(',');
+            if (ignoresArr && ignoresArr.length > 0) {
+                let n = currHash;
+                if (ignoresArr.includes(n)) {
+                    if ($(".page-current div#siblings").length === 0) {
+                        $(".page-current div.labels").after(jump + window.config.danmu);
+                    }
+                    return '';
+                }
+                while(ignoresArr.includes((--n)+''));
+                next = n;
+                n = currHash;
+                while(ignoresArr.includes((++n)+''));
+                pre = n;
+            }
+            if (pre > 0) {
+                jump += "<a style='float:left;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + pre) + "'>◀ 上一篇</a>";
+            }
+            // hash从1开始
+            if (next > 0) {
+                jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next) + "'>下一篇 ▶</a>";
+            }
             if ($(".page-current div#siblings").length === 0) {
                 $(".page-current div.labels").after(jump + window.config.danmu);
             }
