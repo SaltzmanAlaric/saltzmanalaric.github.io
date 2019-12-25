@@ -47,6 +47,10 @@ canvas#timeProcess {
   font-weight: 700;
 }
 
+ul.comment-list {
+  width: 100%;
+}
+
 @media screen and (max-width: 800px) {
     .page > div {
       max-width: 100%;
