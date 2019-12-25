@@ -38,7 +38,10 @@
             createYear: 2019,
         };
 
-        const siblings = function(mc) {console.dir(mc);debugger;
+        const siblings = function(edges, node) {
+            if (node.name !== edges[edges.length - 1].name) {
+                return '';
+            }
             let jump = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'>";
             let currHash = parseInt(document.location.hash.match(/[0-9]+/g)[0]);
             let pre = currHash + 1;
