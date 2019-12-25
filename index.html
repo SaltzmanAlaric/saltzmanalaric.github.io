@@ -47,7 +47,10 @@
             if (ignoresArr && ignoresArr.length > 0) {
                 let n = currHash;
                 if (ignoresArr.includes(n)) {
-                    return jump + window.config.danmu;
+                    if ($(".page-current div#siblings").length === 0) {
+                        $(".page-current div.labels").after(jump + window.config.danmu);
+                    }
+                    return '';
                 }
                 while(ignoresArr.includes((--n)+''));
                 next = n;
@@ -80,7 +83,10 @@
                     }
                 });
             }
-            return jump + window.config.danmu;
+            if ($(".page-current div#siblings").length === 0) {
+                $(".page-current div.labels").after(jump + window.config.danmu);
+            }
+            return '';
         };
 
         console.log('%c ' + window.config.title + ' ' + window.config.user,
