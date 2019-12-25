@@ -54,6 +54,10 @@ ul.comment-list {
 div#yx {
   margin-top: -40px;
   padding: 4px;
+  line-height: 1.4;
+  text-align: center;
+  font-size: 14px;
+  color: #5c6e7b;
 }
 
 @media screen and (max-width: 800px) {
