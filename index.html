@@ -34,8 +34,75 @@
             commentWrite: '我要发言',
             loadMore: '更多',
             listStyle: 'live type2',
-            danmu: '<hr><a style="float:left;background:#fff;border:0;margin:0px 0px 10px; href=\"javascript:function(){document.location.href.replace(/\\/posts\\/[0-9]+/g, "/posts/"+ parseInt(document.location.hash.match(/[0-9]+/g)[0])-1)};\">◀  上一篇</a><a style="float:right;background:#fff;border:0;margin:0px 0px 10px;" href=\"javascript:function(){document.location.href.replace(/\\/posts\\/[0-9]+/g, "/posts/"+ parseInt(document.location.hash.match(/[0-9]+/g)[0])-1)};\">下一篇 ▶</a><marquee scrollamount="10"><font color="#66CCFF">233&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font size="3" color="#FF0000">前方高能</font></marquee><marquee scrollamount="6"><font size="2" color="#FF0000">第一</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;666</marquee><marquee scrollamount="8"><font ccolor="#006699">都是时辰的错</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font  size="3" color="#EE0000">大哥喝阔落</font></marquee><marquee scrollamount="16"><font color="#006699">Wryyyyy</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;hhhhh</marquee><marquee scrollamount="14"><font color="#FF0000">战5渣</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;有人吗？？？</marquee><marquee scrollamount="12"><font size="3" color="#66CCFF">今天的风儿甚是喧嚣</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;666</marquee>',
+            danmu: '<marquee scrollamount="10"><font color="#66CCFF">233&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font size="3" color="#FF0000">前方高能</font></marquee><marquee scrollamount="6"><font size="2" color="#FF0000">第一</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;666</marquee><marquee scrollamount="8"><font ccolor="#006699">都是时辰的错</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font  size="3" color="#EE0000">大哥喝阔落</font></marquee><marquee scrollamount="16"><font color="#006699">Wryyyyy</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;hhhhh</marquee><marquee scrollamount="14"><font color="#FF0000">战5渣</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;有人吗？？？</marquee><marquee scrollamount="12"><font size="3" color="#66CCFF">今天的风儿甚是喧嚣</font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;666</marquee>',
             createYear: 2019,
+        };
+
+        const siblings = function() {
+            let currHash = parseInt(document.location.hash.match(/[0-9]+/g)[0]);
+            let pre = currHash + 1;
+            let next = currHash - 1;
+            const ignoresArr = window.config.ignores.split(',');
+            if (ignoresArr && ignoresArr.length > 0) {
+                let n = currHash;
+                if (ignoresArr.includes(n)) {
+                    return '';
+                }
+                while(ignoresArr.includes((--n)+''));
+                next = n;
+                n = currHash;
+                while(ignoresArr.includes((++n)+''));
+                pre = n;
+            }
+
+            let jump = '';
+            let href = '';
+            let desc = '';
+            if (window.config.max) {
+                if (pre <= window.config.max) {
+                    href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + pre);
+                    desc = '上一篇';
+                } else {
+                    href = "javascript:void(0);";
+                    desc = '没有了';
+                }
+                jump += "<a style='float:left;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>◀  "+ desc +"</a>";
+                // hash从1开始
+                if (next > 0) {
+                    href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next);
+                    desc = '下一篇';
+                } else {
+                    href = "javascript:void(0);";
+                    desc = '没有了';
+                }
+                jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>"+ desc +" ▶</a>";
+                document.querySelector('.page-current #siblings').innerHTML = jump;
+            } else {
+                $.ajax({
+                    url:"https://api.github.com/repos/"+ window.config.user + "/" + window.config.repository + "/issues?page=1&per_page=1&assignee=" + window.config.user + "&sort=created-desc&milestone=1",
+                    success:function(res) {
+                        window.config.max = res[0].number;
+                        if (pre <= window.config.max) {
+                            href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + pre);
+                            desc = '上一篇';
+                        } else {
+                            href = "javascript:void(0);";
+                            desc = '没有了';
+                        }
+                        jump += "<a style='float:left;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>◀  "+ desc +"</a>";
+                        // hash从1开始
+                        if (next > 0) {
+                            href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next);
+                            desc = '下一篇';
+                        } else {
+                            href = "javascript:void(0);";
+                            desc = '没有了';
+                        }
+                        jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>"+ desc +" ▶</a>";
+                        document.querySelector('.page-current #siblings').innerHTML = jump;
+                    }
+                });
+            }
         };
 
         console.log('%c ' + window.config.title + ' ' + window.config.user,
@@ -213,8 +280,9 @@
 <div id="loader">
     <div></div>
 </div>
-<audio id="audio" controls="controls" autoplay="autoplay" hidden="hidden"></audio>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.14/lib/index.04eb6053.js"></script>
+<audio id="audio" controls="controls" autoplay="autoplay" hidden="hidden"></audio><!--
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SaltzmanAlaric/weekly@v1.0.14/lib/index.04eb6053.js"></script>-->
+<script type="text/javascript" src="lib/index.04eb6053.js"></script>
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="sitev">
     <div id="musicBtn">💎</div>
