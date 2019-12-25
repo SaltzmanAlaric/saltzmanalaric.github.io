@@ -21,7 +21,7 @@
             user: 'SaltzmanAlaric',
             repository: 'Mirror-blog',
             authors: 'SaltzmanAlaric',
-            ignores: '1',
+            ignores: '1,2,3,4,5,7',
             host: '',
             hash: 'WTWUfeXEATcEPdACWEdXTEUEFUUOdFWEXdcfcFcE c2FsdHptYW5hbGFyaWMuZ2l0aHViLmlv',
             perpage: 10,
@@ -47,7 +47,7 @@
             if (ignoresArr && ignoresArr.length > 0) {
                 let n = currHash;
                 if (ignoresArr.includes(n)) {
-                    return '';
+                    return jump;
                 }
                 while(ignoresArr.includes((--n)+''));
                 next = n;
