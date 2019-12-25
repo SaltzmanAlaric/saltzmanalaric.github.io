@@ -39,7 +39,7 @@
         };
 
         const siblings = function() {
-            let hr = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'></div>";
+            let jump = "<div id='siblings' style='border-top: 1px solid #eaecef;margin-top:4px;padding-top: 0.3em;'></div>";
             let currHash = parseInt(document.location.hash.match(/[0-9]+/g)[0]);
             let pre = currHash + 1;
             let next = currHash - 1;
@@ -47,7 +47,7 @@
             if (ignoresArr && ignoresArr.length > 0) {
                 let n = currHash;
                 if (ignoresArr.includes(n)) {
-                    return hr;
+                    return jump;
                 }
                 while(ignoresArr.includes((--n)+''));
                 next = n;
@@ -56,54 +56,31 @@
                 pre = n;
             }
 
-            let jump = '';
-            let href = '';
-            let desc = '';
             if (window.config.max) {
                 if (pre <= window.config.max) {
-                    href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + pre);
-                    desc = '上一篇';
-                } else {
-                    href = "javascript:void(0);";
-                    desc = '没有了';
+                    jump += "<a style='float:left;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + pre) + "'>◀ 上一篇</a>";
                 }
-                jump += "<a style='float:left;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>◀  "+ desc +"</a>";
                 // hash从1开始
                 if (next > 0) {
-                    href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next);
-                    desc = '下一篇';
-                } else {
-                    href = "javascript:void(0);";
-                    desc = '没有了';
+                    jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next) + "'>下一篇 ▶</a>";
                 }
-                jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>"+ desc +" ▶</a>";
             } else {
                 $.ajax({
-                    url:"https://api.github.com/repos/"+ window.config.user + "/" + window.config.repository + "/issues?page=1&per_page=1&assignee=" + window.config.user + "&sort=created-desc&milestone=1",
+                    url:"https://api.github.com/repos/"+ window.config.user + "/" + window.config.repository + "/issues?page=1&per_page=1&assignee=" + window.config.user + "&sort=created-desc",
                     success:function(res) {
                         window.config.max = res[0].number;
                         if (pre <= window.config.max) {
-                            href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + pre);
-                            desc = '上一篇';
-                        } else {
-                            href = "javascript:void(0);";
-                            desc = '没有了';
+                            jump += "<a style='float:left;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + pre) + "'>◀ 上一篇</a>";
                         }
-                        jump += "<a style='float:left;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>◀  "+ desc +"</a>";
                         // hash从1开始
                         if (next > 0) {
-                            href = document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next);
-                            desc = '下一篇';
-                        } else {
-                            href = "javascript:void(0);";
-                            desc = '没有了';
+                            jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + document.location.href.replace(/\/posts\/[0-9]+/g, "/posts/" + next) + "'>下一篇 ▶</a>";
                         }
-                        jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>"+ desc +" ▶</a>";
-                        return hr + jump;
+                        return jump;
                     }
                 });
             }
-            return hr + jump;
+            return jump;
         };
 
         console.log('%c ' + window.config.title + ' ' + window.config.user,
