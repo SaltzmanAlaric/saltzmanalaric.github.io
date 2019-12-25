@@ -99,7 +99,7 @@
                             desc = '没有了';
                         }
                         jump += "<a style='float:right;background:#fff;border:0;margin:0px 0px 10px;' href='" + href + "'>"+ desc +" ▶</a>";
-                        document.querySelector('.page-current #siblings').innerHTML = jump;
+                        return hr + jump;
                     }
                 });
             }
