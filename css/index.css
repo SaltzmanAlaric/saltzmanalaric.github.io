@@ -13,10 +13,10 @@ canvas#timeProcess {
   width: 110px;
   height: 110px;
 }
-.markdown-body a>img{
+.markdown-body img{
   transition: .5s;
 }
-.markdown-body a>img:hover {
+.markdown-body img:hover {
   box-shadow: 0 8px 16px rgba(0,40,160,.08), 0 8px 24px rgba(0,0,0,.08);
   background: #f6f8fa!important;
 }
