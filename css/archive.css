@@ -138,7 +138,7 @@ body {
 
 .history-date ul li.green dl dt {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 22px;
 }
 
 .history-date ul li.green dl dt a {
@@ -146,7 +146,7 @@ body {
     zoom: 1;
     overflow: hidden;
     background: transparent;
-    font-size: 30px !important;
+    font-size: 20px !important;
     font-weight: normal;
     vertical-align: text-bottom;
 }
