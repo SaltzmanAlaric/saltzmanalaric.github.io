@@ -119,7 +119,7 @@ $(document).ready(function () {
         let runTime = new Date().getTime() - 1559716896000;
         if (runTime > 0) {
             runTime /= 1000;
-            let day = runTime/86400;
+            let day = Math.floor(runTime/86400);
             runTime %= 86400;
             let hour = Math.floor(runTime / 3600);
             runTime %= 3600;
