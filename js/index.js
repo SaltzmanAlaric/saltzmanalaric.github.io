@@ -3,8 +3,8 @@ var a_idx = 0;
 jQuery(document).ready(function ($) {
     $("body").click(function (e) {
         var a = new Array("♪", "♩", "♫", "♬", "♭", "€", "§", "¶", "♯", "$", "Ψ", "¥", "∮", "‖", "⌒", "∠");
-        var $i = $("<span/>").text(a[a_idx]);
-        a_idx = parseInt(Math.random() * a.length);
+        var idx = parseInt(Math.random() * a.length);
+        var $i = $("<span/>").text(a[idx]);
         var x = e.pageX, y = e.pageY;
         $i.css({
             "z-index": 100000000,
@@ -119,17 +119,13 @@ $(document).ready(function () {
         let runTime = new Date().getTime() - 1559716896000;
         if (runTime > 0) {
             runTime /= 1000;
-            let year = Math.floor(runTime / 86400 / 365);
-            runTime %= (86400 * 365);
-            let month = Math.floor(runTime / 86400 / 30);
-            runTime %= (86400 * 30);
-            let day = Math.floor(runTime / 86400);
+            let day = runTime/86400;
             runTime %= 86400;
             let hour = Math.floor(runTime / 3600);
             runTime %= 3600;
             let minute = Math.floor(runTime / 60);
             let second = Math.floor(runTime % 60);
-            $('.page-current #yx').html('该网站已运行：' + ('0'+year).slice(-2) + '年' + ('0'+month).slice(-2) + '月' + ('0'+day).slice(-2) + '日' + ('0'+hour).slice(-2) + '时' + ('0'+minute).slice(-2) + '分' + ('0'+second).slice(-2) + '秒');
+            $('.page-current #yx').html('该网站已运行：' + day + '天' + ('0'+hour).slice(-2) + '时' + ('0'+minute).slice(-2) + '分' + ('0'+second).slice(-2) + '秒');
         }
     }, 1000);
 });
