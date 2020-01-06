@@ -124,7 +124,7 @@ $(document).ready(function () {
             let hour = Math.floor(runTime / 3600);
             runTime %= 3600;
             let minute = Math.floor(runTime / 60);
-            let second = runTime % 60;
+            let second = Math.floor(runTime % 60);
             $('.page-current #yx').html('该网站已运行：' + day + '天' + ('0'+hour).slice(-2) + '时' + ('0'+minute).slice(-2) + '分' + ('0'+second).slice(-2) + '秒');
         }
     }, 1000);
