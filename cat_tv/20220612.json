@@ -1,10 +1,10 @@
 ###
 {
 "sites": [
-{"key":"csp_xpath_lezhutv","name":"½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú","type":3,"api":"csp_XPathMac","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://kds2.coding.net/p/k/d/k/git/raw/master/xpath/lezhutv.json"},
+{"key":"csp_xpath_lezhutv","name":"æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£","type":3,"api":"csp_XPathMac","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://kds2.coding.net/p/k/d/k/git/raw/master/xpath/lezhutv.json"},
 {
 "key": "csp_Buka",
-"name": "½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú",
+"name": "æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£",
 "type": 3,
 "api": "csp_Buka",
 "searchable": 1,
@@ -12,10 +12,10 @@
 "filterable": 1
 },
 
-{"key":"csp_appysv2_Ìì¿ÕV2","name":"½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":0,"filterable":1,"ext":"https://www.tkys.tv/xgapp.php/v2/"},
+{"key":"csp_appysv2_å¤©ç©ºV2","name":"æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":0,"filterable":1,"ext":"https://www.tkys.tv/xgapp.php/v2/"},
 {
 "key": "csp_Auete",
-"name": "½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú",
+"name": "æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£",
 "type": 3,
 "api": "csp_Auete",
 "searchable": 1,
@@ -24,7 +24,7 @@
 },
 {
 "key": "csp_Cokemv",
-"name": "½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú",
+"name": "æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£",
 "type": 3,
 "api": "csp_Cokemv",
 "searchable": 1,
@@ -33,17 +33,17 @@
 },
 {
 "key": "csp_Enlienli",
-"name": "½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú",
+"name": "æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£",
 "type": 3,
 "api": "csp_Enlienli",
 "searchable": 1,
 "quickSearch": 0,
 "filterable": 1
 },
-{"key":"csp_xpath_lezhutv","name":"½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú","type":3,"api":"csp_XPathMac","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://mtv123.coding.net/p/m/d/m/git/raw/master/xpath/lezhutv.json"},
+{"key":"csp_xpath_lezhutv","name":"æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£","type":3,"api":"csp_XPathMac","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://mtv123.coding.net/p/m/d/m/git/raw/master/xpath/lezhutv.json"},
 {
 "key": "csp_xpath_94sm",
-"name": "½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú",
+"name": "æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£",
 "type": 3,
 "api": "csp_XPath",
 "searchable": 1,
@@ -53,7 +53,7 @@
 },
 {
 "key": "csp_xpath_age",
-"name": "½Ó¿Ú±»·â¼´½«Í£ÓÃ£¬¹«ÖÚºÅ£º·ÖÏíÃÔ£¬»Ø¸´£º½Ó¿Ú",
+"name": "æ¥å£è¢«å°å³å°†åœç”¨ï¼Œå…¬ä¼—å·ï¼šåˆ†äº«è¿·ï¼Œå›å¤ï¼šæ¥å£",
 "type": 3,
 "api": "csp_XPath",
 "searchable": 1,
@@ -77,7 +77,7 @@
 ],
 "parses": [
 {
-"name": "µã´Ë½âÎö",
+"name": "ç‚¹æ­¤è§£æ",
 "type": 2,
 "url": "Parallel"
 },
@@ -87,7 +87,7 @@
 "url": "https://api.zakkpa.com:8888/analysis/json/?uid=39&my=bdfinvyBCDEJKUY089&url="
 },
 {
-"name": "¹«Ö÷",
+"name": "å…¬ä¸»",
 "type": 1,
 "url": "https://jx.renrenmi.cc/?url="
 }
@@ -107,7 +107,7 @@
 "spider": "https://jar1234.coding.net/p/m/d/m/git/raw/master/custom_spider_0330.jar;md5;01a4ac9109a0602124cee4feddc1971e",
 "ijk": [
 {
-"group": "Èí½âÂë",
+"group": "è½¯è§£ç ",
 "options": [
 {
 "category": 4,
@@ -186,7 +186,7 @@
 ]
 },
 {
-"group": "Ó²½âÂë",
+"group": "ç¡¬è§£ç ",
 "options": [
 {"category": 4,
 "name": "opensles",
